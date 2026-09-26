@@ -1,6 +1,6 @@
 import subprocess, re, sys, time
-A='/opt/homebrew/share/android-commandlinetools/platform-tools/adb'
-import os
+import os, shutil
+A=os.environ.get('ADB') or shutil.which('adb') or '/opt/homebrew/share/android-commandlinetools/platform-tools/adb'
 S=os.environ.get('JADUAL_CAPTURE_DIR', os.path.join(os.path.dirname(os.path.abspath(__file__)), 'out'))
 def sh(*a): return subprocess.run([A,'shell',*a],capture_output=True,text=True).stdout
 def dump():
