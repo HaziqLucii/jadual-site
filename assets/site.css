@@ -1,0 +1,54 @@
+:root{--g:243,240,230;--k:27,34,51;--grid:47,86,196;--rule:#c9423a}
+html,body{margin:0;background:rgb(var(--g));color:rgb(var(--k));-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(rgba(var(--grid),.08) 1px,transparent 1px),linear-gradient(90deg,rgba(var(--grid),.08) 1px,transparent 1px),linear-gradient(rgba(var(--grid),.14) 1px,transparent 1px),linear-gradient(90deg,rgba(var(--grid),.14) 1px,transparent 1px);background-size:12px 12px,12px 12px,60px 60px,60px 60px}
+body::after{content:"";position:fixed;top:0;bottom:0;left:clamp(28px,4vw,56px);width:2px;background:var(--rule);pointer-events:none;z-index:60}
+a{color:rgb(var(--k))}
+a:hover{color:var(--rule)}
+::selection{background:#FFE45C;color:#1b2233}
+a:focus-visible{outline:2px solid var(--rule);outline-offset:3px}
+
+/* Phones and small tablets: the design is drawn for desktop, so these
+   override its inline spacing, and the pinned scroll scenes become plain
+   sections (landing.js skips the pins below this width). */
+@media (max-width: 760px) {
+  body::after { left: 14px; }
+  [data-nav] > div { padding: 0 16px 0 28px !important; height: 56px !important; gap: 10px !important; }
+  [data-navlink], [data-navget] { display: none !important; }
+  #top, section, footer { padding-left: 28px !important; padding-right: 16px !important; }
+  [data-facts] { margin-left: 28px !important; grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  #top { padding-top: 96px !important; min-height: auto !important; gap: 40px !important; }
+  [data-stamp] { display: none !important; }
+  [data-wk], [data-wall], [data-gal] { height: auto !important; padding-top: 88px !important; padding-bottom: 88px !important; }
+  [data-wk] [data-grid] { height: 420px !important; }
+  [data-wfit] { --ws: 1 !important; margin: 0 !important; }
+  section, footer { padding-top: 88px !important; padding-bottom: 88px !important; }
+  [data-gal] > div:first-child { padding-left: 28px !important; padding-right: 16px !important; }
+  [data-gal] [data-turn] { display: none; }
+  [data-track] { width: auto !important; overflow-x: auto; scroll-snap-type: x mandatory; padding-left: 28px !important; padding-right: 16px !important; padding-bottom: 12px !important; gap: 24px !important; }
+  [data-track] > div { scroll-snap-align: start; }
+  [data-wid] { width: 100% !important; padding: 20px !important; }
+  [data-wid] img { max-width: 100%; height: auto !important; }
+  footer > div:last-child { margin-top: 80px !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+/* Privacy and terms */
+.doc-wrap{position:relative;z-index:1;max-width:760px;padding:40px clamp(20px,4vw,56px) 80px clamp(48px,7vw,104px);font-family:'IBM Plex Sans',sans-serif;font-size:16px;line-height:1.7;color:rgba(var(--k),.85)}
+.doc-top{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1.5px solid rgb(var(--k));padding-bottom:14px}
+.doc-top .mark{font-family:'Instrument Serif',serif;font-style:italic;font-size:28px;text-decoration:none}
+.doc-top nav{display:flex;gap:18px;font-size:14px;font-weight:500}
+.doc-top nav a{text-decoration:none}
+.doc .kick{margin-top:48px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(var(--k),.7)}
+.doc h1{margin:10px 0 18px;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(48px,7vw,84px);line-height:1;color:rgb(var(--k))}
+.doc h2{margin:40px 0 8px;font-family:'Instrument Serif',serif;font-weight:400;font-size:30px;line-height:1.1;color:rgb(var(--k))}
+.doc ul{padding-left:20px}
+.doc table{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:8px}
+.doc th,.doc td{text-align:left;vertical-align:top;padding:10px 12px 10px 0;border-bottom:1px solid rgba(var(--k),.25)}
+.doc th{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(var(--k),.7)}
+.doc-foot{margin-top:64px;padding-top:16px;border-top:1.5px solid rgb(var(--k));display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:13px;font-weight:500}
+.doc-foot a{text-decoration:none;margin-left:16px}
+@media (max-width:760px){.doc-wrap{padding-left:28px;padding-right:16px}}
