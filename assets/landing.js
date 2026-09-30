@@ -16,7 +16,12 @@
   }
   g.registerPlugin(ST);
   var q = g.utils.selector(root);
-  var wide = window.matchMedia('(min-width: 761px)').matches;
+  // Pin the scenes only where a whole scene fits on screen, as the design does.
+  var wide = window.innerWidth >= 761 && window.innerHeight >= 720;
+  q('[data-pinsec]').forEach(function (el) {
+    el.style.height = wide ? '100vh' : 'auto';
+    el.style.overflow = wide ? 'hidden' : 'visible';
+  });
   var walls = q('[data-wph]'), wopts = q('[data-wopt]');
 
   var start = function () {

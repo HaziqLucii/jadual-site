@@ -22,6 +22,7 @@ a:focus-visible{outline:2px solid var(--rule);outline-offset:3px}
   [data-stamp] { display: none !important; }
   [data-wk], [data-wall], [data-gal] { height: auto !important; padding-top: 88px !important; padding-bottom: 88px !important; }
   [data-wk] [data-grid] { height: 420px !important; }
+  [data-dn] { display: none; }
   [data-wfit] { --ws: 1 !important; margin: 0 !important; }
   section, footer { padding-top: 88px !important; padding-bottom: 88px !important; }
   [data-gal] > div:first-child { padding-left: 28px !important; padding-right: 16px !important; }
@@ -34,6 +35,9 @@ a:focus-visible{outline:2px solid var(--rule);outline-offset:3px}
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  /* No pinned sideways scroll: the one-sheet gallery scrolls by hand. */
+  [data-gal] { height: auto !important; padding: 88px 0 !important; }
+  [data-track] { width: auto !important; overflow-x: auto; padding-bottom: 12px !important; }
 }
 
 /* Privacy and terms */
