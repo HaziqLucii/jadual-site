@@ -15,6 +15,7 @@ ROOT = Path(__file__).resolve().parent.parent
 BASE = 'https://haziqlucii.github.io/jadual-site/'
 CONTACT = 'haziq.support.dev@gmail.com'
 TEST = 'https://play.google.com/apps/testing/io.github.haziqlucii.jadual'
+GROUP = 'https://groups.google.com/g/sampai-testers'
 
 HL = {'ds': '#8EC5FF', 'la': '#FFE45C', 'cn': '#9FE8C8', 'db': '#FF94C2',
       'ti': '#B5CF84', 'en': '#FFB070', 'se': '#E8836F'}
@@ -86,6 +87,11 @@ C = {
            'Exam countdown line and evening-before reminder', 'Redrawn at 06:00 and after every change', 'Next class and Week widgets', 'Semester archive'],
   priceLine='Jadual Pro is a Semester Pass for 6 months, with a 7-day free trial if you are new, or Lifetime. Google Play shows the price in your currency.',
   galH='The whole semester, on one sheet.', turn='turn over →', crossed='Crossed out, on purpose.',
+  jk='Before launch.', jh='Want to join the test?',
+  jp='Jadual is in a closed test on Google Play before it opens to everyone. Two steps, about a minute.',
+  jsteps=[('Join the tester group', 'A Google Group, so Google Play knows you are a tester. Use the Google account that is on your phone.', 'Open the group'),
+          ('Opt in and install', 'Open the test page, tap Become a tester, then install Jadual from Google Play.', 'Open the test page')],
+  jnote='Needs Android 10 or newer. Please keep Jadual installed for 14 days: Google asks testers to keep it that long before the public launch. Feedback or bugs:',
   freeOn='Coming soon to Google Play', fw0='Type', fw1='it', fw2='once.',
   foot='Android · No account · Your timetable stays on your phone',
   privacy='Privacy', terms='Terms', contact='Contact',
@@ -144,6 +150,11 @@ C = {
            'Baris kiraan peperiksaan dan peringatan malam sebelumnya', 'Dilukis semula pada 06:00 dan selepas setiap perubahan', 'Widget Kelas seterusnya dan Minggu', 'Arkib semester'],
   priceLine='Jadual Pro ialah Pas Semester untuk 6 bulan, dengan percubaan percuma 7 hari untuk pengguna baharu, atau Seumur hidup. Google Play menunjukkan harga dalam mata wang anda.',
   galH='Seluruh semester, pada satu helaian.', turn='sila lihat sebelah →', crossed='Dipangkah, dengan sengaja.',
+  jk='Sebelum pelancaran.', jh='Mahu sertai ujian?',
+  jp='Jadual sedang dalam ujian tertutup di Google Play sebelum dibuka kepada semua. Dua langkah, lebih kurang seminit.',
+  jsteps=[('Sertai kumpulan penguji', 'Kumpulan Google, supaya Google Play tahu anda seorang penguji. Guna akaun Google yang ada pada telefon anda.', 'Buka kumpulan'),
+          ('Daftar dan pasang', 'Buka halaman ujian, ketik Jadi penguji, kemudian pasang Jadual dari Google Play.', 'Buka halaman ujian')],
+  jnote='Perlu Android 10 atau lebih baharu. Sila kekalkan Jadual dipasang selama 14 hari: Google meminta penguji menyimpannya selama itu sebelum pelancaran umum. Maklum balas atau pepijat:',
   freeOn='Akan datang ke Google Play', fw0='Taip', fw1='sekali', fw2='sahaja.',
   foot='Android · Tiada akaun · Jadual anda kekal di telefon anda',
   privacy='Privasi', terms='Terma', contact='Hubungi',
@@ -202,6 +213,11 @@ C = {
            'Baris hitung mundur ujian dan pengingat malam sebelumnya', 'Digambar ulang pukul 06.00 dan setelah setiap perubahan', 'Widget Kuliah berikutnya dan Minggu', 'Arsip semester'],
   priceLine='Jadual Pro berupa Pass Semester untuk 6 bulan, dengan uji coba gratis 7 hari bagi pengguna baru, atau Seumur hidup. Google Play menampilkan harga dalam mata uangmu.',
   galH='Satu semester penuh, di satu lembar.', turn='balik halaman →', crossed='Dicoret, dengan sengaja.',
+  jk='Sebelum rilis.', jh='Mau ikut uji coba?',
+  jp='Jadual sedang dalam uji coba tertutup di Google Play sebelum dibuka untuk semua. Dua langkah, sekitar semenit.',
+  jsteps=[('Gabung ke grup penguji', 'Grup Google, agar Google Play tahu kamu penguji. Pakai akun Google yang ada di ponselmu.', 'Buka grup'),
+          ('Daftar dan pasang', 'Buka halaman uji coba, ketuk Jadi penguji, lalu pasang Jadual dari Google Play.', 'Buka halaman uji coba')],
+  jnote='Butuh Android 10 atau yang lebih baru. Tolong biarkan Jadual terpasang selama 14 hari: Google meminta penguji menyimpannya selama itu sebelum rilis umum. Masukan atau bug:',
   freeOn='Segera hadir di Google Play', fw0='Ketik', fw1='sekali', fw2='saja.',
   foot='Android · Tanpa akun · Jadwalmu tetap di ponselmu',
   privacy='Privasi', terms='Ketentuan', contact='Kontak',
@@ -349,8 +365,16 @@ def page(lang):
             'color:rgb(var(--g));border-radius:2px;text-decoration:none"><span style="display:flex;flex-direction:column;line-height:1.15">'
             f'<span style="font-size:10px;font-weight:600;letter-spacing:.14em">{e(c["getOn"])}</span>'
             '<span style="font-size:18px;font-weight:600">Google Play</span></span></a>')
-    join = (f'<a href="{TEST}" style="height:58px;padding:0 6px;display:inline-flex;align-items:center;font-size:15px;font-weight:600;'
+    join = (f'<a href="#join" style="height:58px;padding:0 6px;display:inline-flex;align-items:center;font-size:15px;font-weight:600;'
             f'text-underline-offset:4px">{e(c["joinTest"])}</a>')
+    jsteps = ''.join(
+        f'<div data-r="" style="display:flex;flex-direction:column;gap:12px;padding:24px;border:1.5px solid rgb(var(--k));border-radius:2px;background:rgb(var(--g))">'
+        f'<span style="font-family:\'Instrument Serif\',serif;font-style:italic;font-size:30px;line-height:1;color:#c9423a">{i + 1}.</span>'
+        f'<span style="font-family:\'Instrument Serif\',serif;font-size:30px;line-height:1.1">{e(t)}</span>'
+        f'<span style="font-size:15px;line-height:1.6;color:rgba(var(--k),.8);text-wrap:pretty">{e(d)}</span>'
+        f'<a href="{url}" style="align-self:flex-start;margin-top:6px;height:48px;padding:0 18px;display:inline-flex;align-items:center;'
+        f'background:rgb(var(--k));color:rgb(var(--g));border-radius:2px;text-decoration:none;font-size:15px;font-weight:600">{e(b)} →</a></div>'
+        for i, ((t, d, b), url) in enumerate(zip(c['jsteps'], (GROUP, TEST))))
     letters = ''.join(f'<span style="display:inline-block;overflow:hidden;padding-bottom:.12em"><span data-hl="" style="display:inline-block">{ch}</span></span>'
                       for ch in 'Jadual')
     facts = ''.join(f'<div data-fact="" style="padding:18px 20px 20px 0"><div style="font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;'
@@ -636,6 +660,16 @@ def page(lang):
 {plan}
 </div>
 <p data-r="" style="margin:28px 0 0;font-size:16px;line-height:1.7;color:rgba(var(--k),.8);text-wrap:pretty;max-width:640px">{e(c['priceLine'])}</p>
+</section>
+
+<section id="join" style="position:relative;padding:130px clamp(20px,4vw,56px) 130px clamp(48px,7vw,104px);border-top:1.5px solid rgb(var(--k))">
+{q('jk')}
+{h2('jh', 860)}
+<p data-r="" style="margin:20px 0 0;font-size:17px;line-height:1.7;color:rgba(var(--k),.8);text-wrap:pretty;max-width:640px">{e(c['jp'])}</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:20px;margin-top:40px;max-width:980px">
+{jsteps}
+</div>
+<p data-r="" style="margin:28px 0 0;font-size:15px;line-height:1.7;color:rgba(var(--k),.75);text-wrap:pretty;max-width:680px">{e(c['jnote'])} <a href="mailto:{CONTACT}">{CONTACT}</a></p>
 </section>
 
 <footer id="get" style="position:relative;padding:140px clamp(20px,4vw,56px) 40px clamp(48px,7vw,104px);border-top:1.5px solid rgb(var(--k));overflow:hidden">
