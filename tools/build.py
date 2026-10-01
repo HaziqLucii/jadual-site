@@ -9,6 +9,7 @@ language; edit the three dicts in C together.
 Run: python3 tools/build.py
 """
 import html
+import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -471,7 +472,9 @@ def page(lang):
 <meta property="og:url" content="{here}">
 <meta name="theme-color" content="#f3f0e6">
 <link rel="canonical" href="{here}">
-{hreflang}
+{hreflang}<link rel="alternate" hreflang="x-default" href="{BASE}">
+<meta name="google-site-verification" content="Je-JRoly5-mxxPhhxuiyMRoeS2g72jVKwHnauIz7ApQ">
+<script type="application/ld+json">{{"@context":"https://schema.org","@type":"MobileApplication","name":"Jadual","operatingSystem":"Android 10 or newer","applicationCategory":"EducationalApplication","inLanguage":["en","ms","id"],"url":"{BASE}","description":{json.dumps(c['desc'])},"offers":{{"@type":"Offer","price":"0","priceCurrency":"USD"}}}}</script>
 <link rel="icon" href="{up}assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -695,6 +698,14 @@ def page(lang):
 '''
 
 
+def sitemap():
+    urls = ['', 'ms/', 'id/', 'privacy/', 'terms/']
+    body = ''.join(f'<url><loc>{BASE}{u}</loc></url>' for u in urls)
+    (ROOT / 'sitemap.xml').write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        f'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{body}</urlset>\n')
+
+
 def main():
     for lang in ('en', 'ms', 'id'):
         out = ROOT / ('index.html' if lang == 'en' else f'{lang}/index.html')
@@ -703,6 +714,7 @@ def main():
         assert '—' not in text, f'em-dash in {lang}'
         out.write_text(text)
         print('wrote', out.relative_to(ROOT))
+    sitemap()
 
 
 if __name__ == '__main__':
