@@ -6,7 +6,7 @@ The website for **Jadual**, an Android class timetable for students: type your t
 - `/privacy/` privacy policy (linked from the Play listing)
 - `/terms/` terms of use
 
-The landing page is ported from the Claude Design file `design/Jadual Paper Landing.dc.html` in the app repo. Every phone, widget and wallpaper on it is a real screenshot from the app (`assets/screens/`, captured with `tools/capture/`), and the Play buttons read "coming soon" until launch. Static HTML, served by GitHub Pages. Scroll scenes use GSAP with ScrollTrigger and Lenis, vendored under `assets/vendor/`; `assets/landing.js` holds the timelines. Motion is off for visitors who ask their system to reduce it, and the pinned scenes turn into plain sections on phones.
+The landing page is ported from the Claude Design file `design/Jadual Paper Landing.dc.html` in the app repo. Every phone, widget and wallpaper on it is a real screenshot from the app (`assets/screens/`, captured with `tools/capture/`), and the Play buttons link to the store listing (live since 2026-10-13). Static HTML, served by GitHub Pages. Scroll scenes use GSAP with ScrollTrigger and Lenis, vendored under `assets/vendor/`; `assets/landing.js` holds the timelines. Motion is off for visitors who ask their system to reduce it, and the pinned scenes turn into plain sections on phones.
 
 ## Building
 
