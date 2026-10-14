@@ -352,7 +352,7 @@ PROOF = {
                ('steady', 'Translated from Malay.', 'P'),
                ('Congrats OP! Awesome!', '', 'R'),
                ('Wow, awesome bro.', '', 'R'),
-               ('Congrats on the app.', '', 'R')],
+               ('great app, really works well to me', '', 'P')],
         note='Real comments and reviews, translated where needed. Usernames not shown.', link='Read the discussion on r/indotech ↗'),
     'ms': dict(
         kick='Daripada Reddit dan Google Play.', head='Kata mereka.',
@@ -366,7 +366,7 @@ PROOF = {
                ('steady', '', 'P'),
                ('Tahniah OP! Hebat!', '', 'R'),
                ('Wah, hebat bro.', '', 'R'),
-               ('Tahniah untuk aplikasi ni.', '', 'R')],
+               ('great app, really works well to me', 'Terjemahan: aplikasi yang bagus, memang berfungsi dengan baik untuk saya.', 'P')],
         note='Komen dan ulasan sebenar, diterjemah jika perlu. Nama pengguna tidak dipaparkan.', link='Baca perbincangan di r/indotech ↗'),
     'id': dict(
         kick='Dari Reddit dan Google Play.', head='Kata mereka.',
@@ -380,7 +380,7 @@ PROOF = {
                ('steady', '', 'P'),
                ('Congrats OP! Keren!', '', 'R'),
                ('Wow keren bro', '', 'R'),
-               ('Congrats ya buat aplikasinya.', '', 'R')],
+               ('great app, really works well to me', 'Terjemahan: aplikasi bagus, benar-benar berfungsi baik buat saya.', 'P')],
         note='Komentar dan ulasan asli, diterjemahkan jika perlu. Nama pengguna tidak ditampilkan.', link='Baca diskusinya di r/indotech ↗'),
 }
 
