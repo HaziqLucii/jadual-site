@@ -57,3 +57,5 @@ a:focus-visible{outline:2px solid var(--rule);outline-offset:3px}
 .doc-foot a{text-decoration:none;margin-left:16px}
 @media (max-width:760px){.doc-wrap{padding-left:28px;padding-right:16px}.doc-foot{padding:16px 0 0!important}.doc-foot>span:last-child{display:flex;flex-wrap:wrap;gap:4px 16px;overflow-wrap:anywhere}.doc-foot a{margin-left:0}}
 .doc h2+.kick{margin-top:0}
+
+@media (max-width:760px){[data-say]{clip-path:none!important;padding-left:0!important}[data-sayhd]{padding-left:0!important}}

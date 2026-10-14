@@ -92,7 +92,7 @@
       var tr = say.querySelector('[data-say-track]');
       Array.prototype.slice.call(tr.children).forEach(function (c) { var d = c.cloneNode(true); d.setAttribute('aria-hidden', 'true'); tr.appendChild(d); });
       say.style.overflow = 'hidden';
-      var st = g.to(tr, { xPercent: -50, repeat: -1, duration: 110, ease: 'none' });
+      var st = g.to(tr, { xPercent: -50, repeat: -1, duration: tr.scrollWidth / 2 / 26, ease: 'none' });
       say.addEventListener('mouseenter', function () { st.pause(); });
       say.addEventListener('mouseleave', function () { st.play(); });
     }
