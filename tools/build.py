@@ -342,7 +342,7 @@ HLS = ['#9FE8C8', '#FFE45C', '#FF94C2', '#8EC5FF', '#FFB070']
 PROOF = {
     'en': dict(
         kick='From Reddit and Google Play.', head='What they said.',
-        src={'R': 'r/indotech', 'M': 'r/IMadeThis', 'S': 'r/ShowYourApp', 'P': 'Google Play ★★★★★'},
+        src={'R': 'r/indotech', 'M': 'r/IMadeThis', 'S': 'r/ShowYourApp', 'P': 'Google Play'},
         items=[('Really great, can this be used for a weekly routine schedule? I use it to write my teaching schedule.', 'Yes. There is a weekly routine mode.', 'R'),
                ('That\'s so perfect, I actually struggle with the calendar widget right now, it\'s never big enough and I need to unlock to see it.', '', 'M'),
                ('peak', '', 'P'),
@@ -356,7 +356,7 @@ PROOF = {
         note='Real comments and reviews, translated where needed. Usernames not shown.', link='Read the discussion on r/indotech ↗'),
     'ms': dict(
         kick='Daripada Reddit dan Google Play.', head='Kata mereka.',
-        src={'R': 'r/indotech', 'M': 'r/IMadeThis', 'S': 'r/ShowYourApp', 'P': 'Google Play ★★★★★'},
+        src={'R': 'r/indotech', 'M': 'r/IMadeThis', 'S': 'r/ShowYourApp', 'P': 'Google Play'},
         items=[('Bagus sangat, boleh ke guna untuk jadual rutin mingguan? Saya guna untuk tulis jadual mengajar.', 'Boleh. Ada mod rutin mingguan.', 'R'),
                ('Memang itu yang saya perlukan. Saya sedang bergelut dengan widget kalendar, saiznya tak pernah cukup besar dan kena buka kunci dulu untuk tengok.', '', 'M'),
                ('peak', '', 'P'),
@@ -370,7 +370,7 @@ PROOF = {
         note='Komen dan ulasan sebenar, diterjemah jika perlu. Nama pengguna tidak dipaparkan.', link='Baca perbincangan di r/indotech ↗'),
     'id': dict(
         kick='Dari Reddit dan Google Play.', head='Kata mereka.',
-        src={'R': 'r/indotech', 'M': 'r/IMadeThis', 'S': 'r/ShowYourApp', 'P': 'Google Play ★★★★★'},
+        src={'R': 'r/indotech', 'M': 'r/IMadeThis', 'S': 'r/ShowYourApp', 'P': 'Google Play'},
         items=[('Bagus banget, ini bisa untuk jadwal rutin mingguan? Saya pake buat nulis jadwal mengajar.', 'Bisa. Ada mode rutinitas mingguan.', 'R'),
                ('Pas banget, saya lagi kesulitan sama widget kalender, ukurannya nggak pernah cukup besar dan harus buka kunci dulu buat lihat.', '', 'M'),
                ('peak', '', 'P'),
@@ -389,14 +389,17 @@ def proof_html(lang, serif, pad):
     d = PROOF.get(lang)
     if not d:
         return ''
-    cards = ''.join(
-        f'<figure style="flex:none;width:min(340px,82vw);margin:0 20px 0 0;padding:20px 22px 22px;border:1.5px solid rgb(var(--k));'
-        f'border-left:8px solid {HLS[i % len(HLS)]};background:rgb(var(--g));box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;gap:14px">'
-        f'<div><div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(var(--k),.7)">{e(d["src"][src])}</div>'
-        f'<blockquote style="margin:10px 0 0;{serif};font-size:clamp(24px,2.2vw,30px);line-height:1.2;text-wrap:pretty">“{e(t)}”</blockquote></div>'
-        + (f'<figcaption style="font-size:14px;font-weight:600;color:rgba(var(--k),.8)">{e(a)}</figcaption>' if a else '')
-        + '</figure>'
-        for i, (t, a, src) in enumerate(d['items']))
+    def card(i, t, a, src):
+        edge = f'flex:none;width:min(340px,82vw);margin:0 20px 0 0;padding:20px 22px 22px;border:1.5px solid rgb(var(--k));border-left:8px solid {HLS[i % len(HLS)]};background:rgb(var(--g));box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;gap:14px'
+        cap = f'<figcaption style="font-size:14px;font-weight:600;color:rgba(var(--k),.8)">{e(a)}</figcaption>' if a else ''
+        tag = 'font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(var(--k),.7)'
+        if src == 'P':
+            return (f'<figure style="{edge}"><div><div aria-label="5 / 5" style="font-size:22px;letter-spacing:.14em;line-height:1;color:rgb(var(--k))">★★★★★</div>'
+                    f'<blockquote style="margin:14px 0 0;font-size:17px;line-height:1.5;color:rgba(var(--k),.9)">{e(t)}</blockquote></div>'
+                    f'<div style="display:flex;flex-direction:column;gap:8px">{cap}<div style="{tag}">{e(d["src"]["P"])}</div></div></figure>')
+        return (f'<figure style="{edge}"><div><div style="{tag}">{e(d["src"][src])}</div>'
+                f'<blockquote style="margin:10px 0 0;{serif};font-size:clamp(24px,2.2vw,30px);line-height:1.2;text-wrap:pretty">“{e(t)}”</blockquote></div>{cap}</figure>')
+    cards = ''.join(card(i, t, a, src) for i, (t, a, src) in enumerate(d['items']))
     return (f'<section style="position:relative;padding:130px 0 130px;border-top:1.5px solid rgb(var(--k));overflow:hidden">'
             f'<div data-sayhd="" style="{pad}"><div data-r="" style="{serif};font-style:italic;font-size:26px;color:var(--rule)">{e(d["kick"])}</div>'
             f'<h2 data-r="" style="margin:10px 0 0;{serif};font-weight:400;font-size:clamp(44px,6vw,88px);line-height:.98;letter-spacing:-.015em">{e(d["head"])}</h2></div>'
