@@ -56,3 +56,4 @@ a:focus-visible{outline:2px solid var(--rule);outline-offset:3px}
 .doc-foot{margin-top:64px;padding-top:16px;border-top:1.5px solid rgb(var(--k));display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:13px;font-weight:500}
 .doc-foot a{text-decoration:none;margin-left:16px}
 @media (max-width:760px){.doc-wrap{padding-left:28px;padding-right:16px}}
+.doc h2+.kick{margin-top:0}
