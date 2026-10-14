@@ -336,6 +336,67 @@ def widget_panel(c, prefix, tag, i):
             f'<div>{img("week", 356, 458)}<div style="{lab};margin-top:8px">4 × 4 · {e(c["widWeek"])}</div></div></div>')
 
 
+THREAD = 'https://www.reddit.com/r/indotech/comments/1x4w0yr/'
+HLS = ['#9FE8C8', '#FFE45C', '#FF94C2', '#8EC5FF', '#FFB070']
+# (quote, answer or '', source) per language; sources: R = r/indotech, P = Google Play (5 stars).
+PROOF = {
+    'en': dict(
+        kick='From the r/indotech community.', head='What they said.', src={'R': 'r/indotech', 'P': 'Google Play ★★★★★'},
+        items=[('Really great, can this be used for a weekly routine schedule? I use it to write my teaching schedule.', 'Yes. There is a weekly routine mode.', 'R'),
+               ('Nice widget, I thought it was Niagara Launcher at first, turns out it is a widget.', '', 'R'),
+               ('My suggestion for the Today widget: show the location too, and maybe the full class time instead of just the start time?', 'Shipped: end time and room now show on the Today widget.', 'R'),
+               ('peak', '', 'P'),
+               ('Congrats OP! Awesome!', '', 'R'),
+               ('steady', 'Translated from Malay.', 'P'),
+               ('Wow, awesome bro.', '', 'R'),
+               ('Congrats on the app.', '', 'R')],
+        note='Real comments and reviews, translated from Indonesian where needed. Usernames not shown.', link='Read the discussion on r/indotech ↗'),
+    'ms': dict(
+        kick='Daripada komuniti r/indotech.', head='Kata mereka.', src={'R': 'r/indotech', 'P': 'Google Play ★★★★★'},
+        items=[('Bagus sangat, boleh ke guna untuk jadual rutin mingguan? Saya guna untuk tulis jadual mengajar.', 'Boleh. Ada mod rutin mingguan.', 'R'),
+               ('Cantik widget ni, saya ingat tadi paparan Niagara Launcher, rupanya widget.', '', 'R'),
+               ('Cadangan saya untuk widget Hari ini: papar juga tempat, dan mungkin masa penuh kelas, bukan masa mula sahaja?', 'Sudah dikeluarkan: masa tamat dan bilik kini dipaparkan pada widget Hari ini.', 'R'),
+               ('peak', '', 'P'),
+               ('Tahniah OP! Hebat!', '', 'R'),
+               ('steady', '', 'P'),
+               ('Wah, hebat bro.', '', 'R'),
+               ('Tahniah untuk aplikasi ni.', '', 'R')],
+        note='Komen dan ulasan sebenar, diterjemah daripada bahasa Indonesia jika perlu. Nama pengguna tidak dipaparkan.', link='Baca perbincangan di r/indotech ↗'),
+    'id': dict(
+        kick='Dari komunitas r/indotech.', head='Kata mereka.', src={'R': 'r/indotech', 'P': 'Google Play ★★★★★'},
+        items=[('Bagus banget, ini bisa untuk jadwal rutin mingguan? Saya pake buat nulis jadwal mengajar.', 'Bisa. Ada mode rutinitas mingguan.', 'R'),
+               ('Bagus widget nya, kukira tadi tampilan niagara launcher, ternyata widget..', '', 'R'),
+               ('Saranku di widget this day, ditampilin juga detail tempatnya, sama mungkin full jam matkul aja ketimbang jam mulainya doang?', 'Sudah rilis: jam selesai dan ruangan tampil di widget Hari ini.', 'R'),
+               ('peak', '', 'P'),
+               ('Congrats OP! Keren!', '', 'R'),
+               ('steady', '', 'P'),
+               ('Wow keren bro', '', 'R'),
+               ('Congrats ya buat aplikasinya.', '', 'R')],
+        note='Komentar dan ulasan asli. Nama pengguna tidak ditampilkan.', link='Baca diskusinya di r/indotech ↗'),
+}
+
+
+def proof_html(lang, serif, pad):
+    d = PROOF.get(lang)
+    if not d:
+        return ''
+    cards = ''.join(
+        f'<figure style="flex:none;width:min(340px,82vw);margin:0 20px 0 0;padding:20px 22px 22px;border:1.5px solid rgb(var(--k));'
+        f'border-left:8px solid {HLS[i % len(HLS)]};background:rgb(var(--g));box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;gap:14px">'
+        f'<div><div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(var(--k),.7)">{e(d["src"][src])}</div>'
+        f'<blockquote style="margin:10px 0 0;{serif};font-size:clamp(24px,2.2vw,30px);line-height:1.2;text-wrap:pretty">“{e(t)}”</blockquote></div>'
+        + (f'<figcaption style="font-size:14px;font-weight:600;color:rgba(var(--k),.8)">{e(a)}</figcaption>' if a else '')
+        + '</figure>'
+        for i, (t, a, src) in enumerate(d['items']))
+    return (f'<section style="position:relative;padding:130px 0 130px;border-top:1.5px solid rgb(var(--k));overflow:hidden">'
+            f'<div style="{pad}"><div data-r="" style="{serif};font-style:italic;font-size:26px;color:var(--rule)">{e(d["kick"])}</div>'
+            f'<h2 data-r="" style="margin:10px 0 0;{serif};font-weight:400;font-size:clamp(44px,6vw,88px);line-height:.98;letter-spacing:-.015em">{e(d["head"])}</h2></div>'
+            f'<div data-say="" style="margin-top:44px;overflow-x:auto;padding:0 0 14px clamp(48px,7vw,104px)">'
+            f'<div data-say-track="" style="display:flex;align-items:stretch;width:max-content">{cards}</div></div>'
+            f'<p style="margin:14px 0 0;{pad};font-size:14px;color:rgba(var(--k),.75)">{e(d["note"])} '
+            f'<a href="{THREAD}" target="_blank" rel="noopener">{e(d["link"])}</a></p></section>')
+
+
 def page(lang):
     c = C[lang]
     up = '' if lang == 'en' else '../'
@@ -436,6 +497,7 @@ def page(lang):
     para = lambda k, mw, r=True: (f'<p{" data-r=\"\"" if r else ""} style="margin:22px 0 0;font-size:16px;line-height:1.7;color:rgba(var(--k),.8);'
                                   f'max-width:{mw}px;text-wrap:pretty">{e(c[k])}</p>')
     pad = 'padding-left:clamp(48px,7vw,104px);padding-right:clamp(20px,4vw,56px)'
+    proof = proof_html(lang, serif, pad)
     strip_w, strip_h = jpeg_size(ROOT / f'assets/screens/{lang}/exam_strip.jpg')
     hreflang = ''.join(f'<link rel="alternate" hreflang="{k}" href="{BASE}{"" if k == "en" else k + "/"}">' for k in ('en', 'ms', 'id'))
 
@@ -638,6 +700,8 @@ def page(lang):
 {marquee}
 </div>
 </section>
+
+{proof}
 
 <section id="pro" style="position:relative;padding:130px clamp(20px,4vw,56px) 130px clamp(48px,7vw,104px);border-top:1.5px solid rgb(var(--k))">
 {q('pk')}

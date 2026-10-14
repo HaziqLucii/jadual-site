@@ -87,6 +87,16 @@
       g.fromTo(l.querySelector('[data-strike]'), { scaleX: 0, rotation: -1.2 }, { scaleX: 1, rotation: -1.2, ease: 'power1.inOut', scrollTrigger: { trigger: l, start: 'top 80%', end: 'top 55%', scrub: true } });
     });
 
+    var say = q('[data-say]')[0];
+    if (say) {
+      var tr = say.querySelector('[data-say-track]');
+      Array.prototype.slice.call(tr.children).forEach(function (c) { var d = c.cloneNode(true); d.setAttribute('aria-hidden', 'true'); tr.appendChild(d); });
+      say.style.overflow = 'hidden';
+      var st = g.to(tr, { xPercent: -50, repeat: -1, duration: 110, ease: 'none' });
+      say.addEventListener('mouseenter', function () { st.pause(); });
+      say.addEventListener('mouseleave', function () { st.play(); });
+    }
+
     var mq = q('[data-mq]')[0], mt = g.to(mq, { xPercent: -50, repeat: -1, duration: 40, ease: 'none' });
     ST.create({ trigger: mq, start: 'top bottom', end: 'bottom top', onUpdate: function (self) {
       var v = self.getVelocity();
