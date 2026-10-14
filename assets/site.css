@@ -55,5 +55,5 @@ a:focus-visible{outline:2px solid var(--rule);outline-offset:3px}
 .doc th{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(var(--k),.7)}
 .doc-foot{margin-top:64px;padding-top:16px;border-top:1.5px solid rgb(var(--k));display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:13px;font-weight:500}
 .doc-foot a{text-decoration:none;margin-left:16px}
-@media (max-width:760px){.doc-wrap{padding-left:28px;padding-right:16px}}
+@media (max-width:760px){.doc-wrap{padding-left:28px;padding-right:16px}.doc-foot{padding:16px 0 0!important}.doc-foot>span:last-child{display:flex;flex-wrap:wrap;gap:4px 16px;overflow-wrap:anywhere}.doc-foot a{margin-left:0}}
 .doc h2+.kick{margin-top:0}
