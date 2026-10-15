@@ -17,6 +17,7 @@ BASE = 'https://haziqlucii.github.io/jadual-site/'
 CONTACT = 'haziq.support.dev@gmail.com'
 TIKTOK = 'https://www.tiktok.com/@itsjadual.app'
 STORE = 'https://play.google.com/store/apps/details?id=io.github.haziqlucii.jadual'
+STORE_SITE = STORE + '&referrer=utm_source%3Dsite%26utm_medium%3Dlanding'
 
 HL = {'ds': '#8EC5FF', 'la': '#FFE45C', 'cn': '#9FE8C8', 'db': '#FF94C2',
       'ti': '#B5CF84', 'en': '#FFB070', 'se': '#E8836F'}
@@ -420,7 +421,7 @@ def page(lang):
         f'text-decoration:none;font-size:13px;font-weight:600;'
         + ('background:rgb(var(--k));color:rgb(var(--g))' if k == lang else 'color:rgb(var(--k))') + f'">{t}</a>'
         for k, t in (('en', 'EN'), ('ms', 'BM'), ('id', 'ID')))
-    play = (f'<a href="{STORE}" style="display:inline-flex;align-items:center;gap:14px;height:58px;padding:0 22px;background:rgb(var(--k));'
+    play = (f'<a href="{STORE_SITE}" style="display:inline-flex;align-items:center;gap:14px;height:58px;padding:0 22px;background:rgb(var(--k));'
             'color:rgb(var(--g));border-radius:2px;text-decoration:none"><span style="display:flex;flex-direction:column;line-height:1.15">'
             f'<span style="font-size:10px;font-weight:600;letter-spacing:.14em">{e(c["getOn"])}</span>'
             '<span style="font-size:18px;font-weight:600">Google Play</span></span></a>')
