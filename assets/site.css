@@ -59,3 +59,6 @@ a:focus-visible{outline:2px solid var(--rule);outline-offset:3px}
 .doc h2+.kick{margin-top:0}
 
 @media (max-width:760px){[data-say]{clip-path:none!important;padding-left:0!important}[data-sayhd]{padding-left:0!important}}
+.doc h3{margin:32px 0 8px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(var(--k),.7)}
+.doc img.pic{display:block;width:100%;height:auto;border:1.5px solid rgb(var(--k));margin:0 0 8px}
+.doc .pics-links{margin:0 0 4px}
