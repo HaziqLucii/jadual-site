@@ -16,6 +16,7 @@ ROOT = Path(__file__).resolve().parent.parent
 BASE = 'https://haziqlucii.github.io/jadual-site/'
 CONTACT = 'haziq.support.dev@gmail.com'
 TIKTOK = 'https://www.tiktok.com/@itsjadual.app'
+YOUTUBE = 'https://www.youtube.com/@jadualapp'
 STORE = 'https://play.google.com/store/apps/details?id=io.github.haziqlucii.jadual'
 STORE_SITE = STORE + '&referrer=utm_source%3Dsite%26utm_medium%3Dlanding'
 
@@ -52,7 +53,7 @@ C = {
   navWeek='The week', navWall='Wallpaper', navWid='Widgets', navThemes='Papers', getApp='Get the app',
   kicker='Android timetable · Offline · EN / MS / ID', tagline='Type your timetable once. See it everywhere.',
   heroP='On your home screen as a widget, and on your lock screen as a wallpaper drawn around your clock. For a semester or a weekly routine. No account, no cloud, no ads.',
-  getOn='GET IT ON', watch='Watch a week fill in ↓', followOn='FOLLOW ON', followCap='Short clips on what is coming next', fig='Fig.', fig1='Friday, 11:18', week7='WEEK 7',
+  getOn='GET IT ON', watch='Watch a week fill in ↓', followOn='FOLLOW ON', watchOn='WATCH ON', followCap='Short clips on what is coming next', fig='Fig.', fig1='Friday, 11:18', week7='WEEK 7',
   q1='Question 1.', q2='Question 2.', q3='Question 3.', q4='Question 4.', q5='Question 5.', q6='Question 6.',
   h1='Sixteen slots. Typed once.',
   p1='One subject can have many slots: a lecture, a tutorial, a lab on alternating weeks. Add each once and the week builds itself, every subject marked in its own highlighter.',
@@ -110,7 +111,7 @@ C = {
   navWeek='Minggu', navWall='Latar skrin', navWid='Widget', navThemes='Kertas', getApp='Dapatkan apl',
   kicker='Jadual Android · Luar talian · EN / MS / ID', tagline='Taip jadual anda sekali. Lihat di mana-mana.',
   heroP='Di skrin utama sebagai widget, dan di skrin kunci sebagai latar skrin yang dilukis di sekitar jam anda. Untuk satu semester atau rutin mingguan. Tiada akaun, tiada awan, tiada iklan.',
-  getOn='DAPATKANNYA DI', watch='Lihat jadual seminggu terisi ↓', followOn='IKUTI DI', followCap='Klip pendek tentang kemas kini seterusnya', fig='Rajah', fig1='Jumaat, 11:18', week7='MINGGU 7',
+  getOn='DAPATKANNYA DI', watch='Lihat jadual seminggu terisi ↓', followOn='IKUTI DI', watchOn='TONTON DI', followCap='Klip pendek tentang kemas kini seterusnya', fig='Rajah', fig1='Jumaat, 11:18', week7='MINGGU 7',
   q1='Soalan 1.', q2='Soalan 2.', q3='Soalan 3.', q4='Soalan 4.', q5='Soalan 5.', q6='Soalan 6.',
   h1='Enam belas slot. Ditaip sekali.',
   p1='Satu subjek boleh ada banyak slot: kuliah, tutorial, makmal pada minggu berselang. Tambah setiap satu sekali dan minggu anda tersusun sendiri, setiap subjek ditanda dengan pen penanda sendiri.',
@@ -168,7 +169,7 @@ C = {
   navWeek='Minggu', navWall='Wallpaper', navWid='Widget', navThemes='Kertas', getApp='Unduh',
   kicker='Jadwal Android · Luring · EN / MS / ID', tagline='Ketik jadwalmu sekali. Lihat di mana saja.',
   heroP='Di layar utama sebagai widget, dan di layar kunci sebagai wallpaper yang digambar di sekitar jammu. Untuk satu semester atau rutinitas mingguan. Tanpa akun, tanpa cloud, tanpa iklan.',
-  getOn='TERSEDIA DI', watch='Lihat jadwal seminggu terisi ↓', followOn='IKUTI DI', followCap='Klip singkat soal update berikutnya', fig='Gambar', fig1='Jumat, 11.18', week7='MINGGU 7',
+  getOn='TERSEDIA DI', watch='Lihat jadwal seminggu terisi ↓', followOn='IKUTI DI', watchOn='TONTON DI', followCap='Klip singkat soal update berikutnya', fig='Gambar', fig1='Jumat, 11.18', week7='MINGGU 7',
   q1='Soal 1.', q2='Soal 2.', q3='Soal 3.', q4='Soal 4.', q5='Soal 5.', q6='Soal 6.',
   h1='Enam belas slot. Diketik sekali.',
   p1='Satu mata kuliah bisa punya banyak slot: kuliah, tutorial, praktikum di minggu bergantian. Tambahkan masing-masing sekali dan jadwal seminggu tersusun sendiri, tiap mata kuliah ditandai dengan stabilonya sendiri.',
@@ -430,6 +431,12 @@ def page(lang):
               '<svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" style="flex:none"><path fill="currentColor" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg><span style="display:flex;flex-direction:column;line-height:1.15">'
               f'<span style="font-size:10px;font-weight:600;letter-spacing:.14em">{e(c["followOn"])}</span>'
               '<span style="font-size:18px;font-weight:600">TikTok ↗</span></span></a>')
+    youtube = (f'<a href="{YOUTUBE}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:14px;height:58px;padding:0 22px;background:#FF94C2;'
+               'color:#1b2233;border:1.5px solid #1b2233;border-radius:2px;text-decoration:none">'
+               '<svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" style="flex:none"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>'
+               '<span style="display:flex;flex-direction:column;line-height:1.15">'
+               f'<span style="font-size:10px;font-weight:600;letter-spacing:.14em">{e(c["watchOn"])}</span>'
+               '<span style="font-size:18px;font-weight:600">YouTube ↗</span></span></a>')
     letters = ''.join(f'<span style="display:inline-block;overflow:hidden;padding-bottom:.12em"><span data-hl="" style="display:inline-block">{ch}</span></span>'
                       for ch in 'Jadual')
     facts = ''.join(f'<div data-fact="" style="padding:18px 20px 20px 0"><div style="font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;'
@@ -566,6 +573,7 @@ def page(lang):
 </div>
 <div data-hf="" style="display:flex;flex-wrap:wrap;gap:14px;margin-top:14px;align-items:center">
 {tiktok}
+{youtube}
 <span style="font-size:14px;font-weight:500;color:rgba(var(--k),.8);max-width:260px;line-height:1.4">{e(c['followCap'])}</span>
 </div>
 </div>
@@ -731,11 +739,12 @@ def page(lang):
 <div data-r="" style="display:flex;flex-wrap:wrap;gap:14px;margin-top:44px;align-items:center">
 {play}
 {tiktok}
+{youtube}
 <span style="font-size:14px;font-weight:500;color:rgba(var(--k),.75)">{e(c['foot'])}</span>
 </div>
 <div style="margin-top:140px;padding-top:18px;border-top:1.5px solid rgb(var(--k));display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;font-size:13px;font-weight:500">
 <span>© 2026 Jadual</span>
-<div style="display:flex;gap:20px"><a href="{up}privacy/" style="text-decoration:none">{e(c['privacy'])}</a><a href="{up}terms/" style="text-decoration:none">{e(c['terms'])}</a><a href="{up}changelog/" style="text-decoration:none">Changelog</a><a href="{TIKTOK}" target="_blank" rel="noopener" style="text-decoration:none">TikTok</a><a href="mailto:{CONTACT}" style="text-decoration:none">{e(c['contact'])}</a></div>
+<div style="display:flex;gap:20px"><a href="{up}privacy/" style="text-decoration:none">{e(c['privacy'])}</a><a href="{up}terms/" style="text-decoration:none">{e(c['terms'])}</a><a href="{up}changelog/" style="text-decoration:none">Changelog</a><a href="{TIKTOK}" target="_blank" rel="noopener" style="text-decoration:none">TikTok</a><a href="{YOUTUBE}" target="_blank" rel="noopener" style="text-decoration:none">YouTube</a><a href="mailto:{CONTACT}" style="text-decoration:none">{e(c['contact'])}</a></div>
 </div>
 </footer>
 </div>
