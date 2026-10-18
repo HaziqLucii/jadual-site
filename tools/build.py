@@ -759,7 +759,7 @@ def page(lang):
 
 
 def sitemap():
-    urls = ['', 'ms/', 'id/', 'privacy/', 'terms/', 'changelog/']
+    urls = ['', 'ms/', 'id/', 'privacy/', 'terms/', 'changelog/', 'links/']
     body = ''.join(f'<url><loc>{BASE}{u}</loc></url>' for u in urls)
     (ROOT / 'sitemap.xml').write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'

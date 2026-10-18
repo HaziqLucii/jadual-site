@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jadual links</title>
+<meta name="description" content="Jadual: aesthetic class timetable for Android. Google Play, YouTube, TikTok, Pinterest and more.">
+<meta name="theme-color" content="#f3f0e6">
+<link rel="icon" href="../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+.links-wrap{position:relative;z-index:1;max-width:520px;margin:0 auto;padding:48px 20px 64px;font-family:'IBM Plex Sans',sans-serif;color:rgb(var(--k));text-align:center}
+.links-wrap img.app{width:84px;height:84px;border-radius:20px;border:2px solid rgb(var(--k));display:block;margin:0 auto 18px}
+.links-wrap h1{margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:56px;line-height:1}
+.links-wrap p{margin:10px 0 32px;font-size:15px;color:rgba(var(--k),.75)}
+.links-wrap a.btn{display:block;margin:0 0 12px;padding:16px 20px;border:1.5px solid rgb(var(--k));border-radius:2px;background:rgb(var(--g));color:rgb(var(--k));font-size:17px;font-weight:600;text-decoration:none}
+.links-wrap a.btn.main{background:rgb(var(--k));color:rgb(var(--g))}
+.links-wrap a.btn span{display:block;margin-top:2px;font-size:12px;font-weight:500;letter-spacing:.04em;opacity:.7}
+</style>
+</head>
+<body>
+<main class="links-wrap">
+<img class="app" src="../assets/icon.png" alt="Jadual app icon">
+<h1>Jadual</h1>
+<p>Aesthetic class timetable for Android. Free, no account, no ads.</p>
+<a class="btn main" id="play" href="https://play.google.com/store/apps/details?id=io.github.haziqlucii.jadual&amp;referrer=utm_source%3Dlinks%26utm_medium%3Dbio">Get it on Google Play<span>Free to start</span></a>
+<a class="btn" href="../">Website<span>Widgets, lock screens, themes</span></a>
+<a class="btn" href="https://www.youtube.com/@jadualapp" target="_blank" rel="noopener">YouTube<span>@jadualapp</span></a>
+<a class="btn" href="https://www.tiktok.com/@itsjadual.app" target="_blank" rel="noopener">TikTok<span>@itsjadual.app</span></a>
+<a class="btn" href="https://www.pinterest.com/jadualapp/" target="_blank" rel="noopener">Pinterest<span>@jadualapp</span></a>
+<a class="btn" href="https://www.lemon8-app.com/@itsjadual.app" target="_blank" rel="noopener">Lemon8<span>@itsjadual.app</span></a>
+<a class="btn" href="https://x.com/HaziqLucis" target="_blank" rel="noopener">X<span>@HaziqLucis</span></a>
+</main>
+<script>
+(function () {
+  var s = (new URLSearchParams(location.search).get('s') || '').toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 20);
+  if (!s) return;
+  var a = document.getElementById('play');
+  a.href = a.href.replace('utm_source%3Dlinks', 'utm_source%3D' + s);
+})();
+</script>
+</body>
+</html>
