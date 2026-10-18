@@ -536,6 +536,7 @@ def page(lang):
 <link rel="canonical" href="{here}">
 {hreflang}<link rel="alternate" hreflang="x-default" href="{BASE}">
 <meta name="google-site-verification" content="Je-JRoly5-mxxPhhxuiyMRoeS2g72jVKwHnauIz7ApQ">
+<meta name="p:domain_verify" content="6730f4c13644ce83cb220308f3a30dee">
 <script type="application/ld+json">{{"@context":"https://schema.org","@type":"MobileApplication","name":"Jadual","operatingSystem":"Android 10 or newer","applicationCategory":"EducationalApplication","inLanguage":["en","ms","id"],"url":"{BASE}","description":{json.dumps(c['desc'])},"installUrl":"{STORE}","offers":{{"@type":"Offer","price":"0","priceCurrency":"USD"}}}}</script>
 <link rel="icon" href="{up}assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
