@@ -69,8 +69,8 @@ C = {
   h3='Your lock screen, as a timetable.',
   p3='Choose Today or Tomorrow, where the list sits, its size and details, and the paper behind it. Jadual draws around your clock and icons, so nothing important hides under them. With Pro it redraws at 06:00 and whenever your timetable changes.',
   wallT=[('Today · Graph', 'Lock screen'), ('Tomorrow · Jubin', 'Lock screen · Pro paper'), ('Today · your photo', 'Exam countdown · Pro')],
-  h4='Three widgets, in your theme.',
-  p4='Today at 4×2 is free. Next class at 2×2 and the whole week at 4×4 come with Pro. All three follow the theme you pick.',
+  h4='Twelve widgets, in your theme.',
+  p4='Today at 4×2 is free. Pro adds eleven more: Next class, Week, Next exam, Exam strip, Exams, Due, To-do, Latest notes, Revise, Pinned note and Quick note. All of them follow the theme you pick.',
   widK='The Today widget on three papers',
   h5='Jadual Papers.',
   p5lead='Other apps call them themes. We call them papers, because that is what they are: something to write your week on.',
@@ -84,10 +84,10 @@ C = {
   leadK='Remind me', leadO=['5 min', '10 min', '15 min', '30 min'],
   nK=['Class reminder · free', 'Evening before an exam · Pro'], fig3='The exam strip on Today',
   pk='Free, and Pro.', ph='The timetable is free for good.', proCol='Pro adds',
-  freeRows=['Today and Week, with A/B weeks', 'University or weekly routine', 'Class and activity reminders', 'Wallpaper: Today or Tomorrow',
+  freeRows=['Today and Week, with A/B weeks', 'University or weekly routine', 'Class and activity reminders', 'Assignments, with due times and reminders', 'Wallpaper: Today or Tomorrow',
             'Graph and Graph dark', 'Today widget, 4×2', 'Export and import a .jadual file'],
   proRows=['Wallpaper: Whole week and Next class', 'Eight more papers, or your own photo', 'Presets, and a separate home screen',
-           'Exam countdown line and evening-before reminder', 'Redrawn at 06:00 and after every change', 'Next class and Week widgets', 'Semester archive'],
+           'Exam countdown line and evening-before reminder', 'Redrawn at 06:00 and after every change', 'Eleven more widgets', 'Notes, with an Inbox, and notes under every exam', 'Semester archive'],
   priceLine='Jadual Pro is a Semester Pass for 6 months, with a 7-day free trial if you are new, or Lifetime. Google Play shows the price in your currency.',
   galH='The whole semester, on one sheet.', turn='turn over →', crossed='Crossed out, on purpose.',
   freeOn='Free on Google Play', fw0='Type', fw1='it', fw2='once.',
@@ -104,6 +104,7 @@ C = {
   nos=[('An account', 'Open it and type'), ('The cloud', 'Stored on this phone'), ('Ads', ''),
        ('Social feeds', 'Your timetable stays yours'), ('Trackers', 'No analytics, no ad IDs')],
   widTitle=('Graph · widgets', 'Graph dark · widgets'), widNext='Next class', widToday='Today', widWeek='Week',
+  widMore='Nine more, with Pro', widNames=['Next exam', 'Pinned note', 'Exam strip', 'Quick note', 'Exams', 'Due', 'To-do', 'Latest notes', 'Revise'],
   shot='Screenshot from the app'),
  'ms': dict(
   htmlLang='ms', title='Jadual: jadual kelas anda, di skrin utama dan skrin kunci',
@@ -127,8 +128,8 @@ C = {
   h3='Skrin kunci anda, sebagai jadual.',
   p3='Pilih Hari ini atau Esok, kedudukan senarai, saiz dan butirannya, serta kertas di belakangnya. Jadual melukis di sekitar jam dan ikon anda, supaya tiada yang penting tersembunyi. Dengan Pro, ia dilukis semula pada 06:00 dan setiap kali jadual waktu anda berubah.',
   wallT=[('Hari ini · Graph', 'Skrin kunci'), ('Esok · Jubin', 'Skrin kunci · kertas Pro'), ('Hari ini · foto anda', 'Kiraan peperiksaan · Pro')],
-  h4='Tiga widget, dalam tema anda.',
-  p4='Hari ini pada 4×2 adalah percuma. Kelas seterusnya pada 2×2 dan seluruh minggu pada 4×4 disertakan dengan Pro. Ketiga-tiganya mengikut tema pilihan anda.',
+  h4='Dua belas widget, dalam tema anda.',
+  p4='Hari ini pada 4×2 percuma. Pro menambah sebelas lagi: Kelas seterusnya, Minggu, Peperiksaan seterusnya, Jalur peperiksaan, Peperiksaan (senarai), Tarikh akhir, Senarai tugas, Nota terkini, Ulang kaji, Nota disemat dan Nota pantas. Semuanya mengikut tema pilihan anda.',
   widK='Widget Hari ini pada tiga kertas',
   h5='Jadual Papers.',
   p5lead='Aplikasi lain memanggilnya tema. Kami memanggilnya kertas, kerana itulah gunanya: tempat untuk menulis minggu anda.',
@@ -142,10 +143,10 @@ C = {
   leadK='Ingatkan saya', leadO=['5 min', '10 min', '15 min', '30 min'],
   nK=['Peringatan kelas · percuma', 'Malam sebelum peperiksaan · Pro'], fig3='Jalur peperiksaan pada Hari ini',
   pk='Percuma, dan Pro.', ph='Jadual waktu anda percuma selamanya.', proCol='Pro menambah',
-  freeRows=['Hari ini dan Minggu, dengan minggu A/B', 'Universiti atau rutin mingguan', 'Peringatan kelas dan aktiviti', 'Latar skrin: Hari ini atau Esok',
+  freeRows=['Hari ini dan Minggu, dengan minggu A/B', 'Universiti atau rutin mingguan', 'Peringatan kelas dan aktiviti', 'Tugasan, dengan tarikh dan masa akhir, serta peringatan', 'Latar skrin: Hari ini atau Esok',
             'Graph dan Graph dark', 'Widget Hari ini, 4×2', 'Eksport dan import fail .jadual'],
   proRows=['Latar skrin: Seluruh minggu dan Kelas seterusnya', 'Lapan kertas lagi, atau foto anda sendiri', 'Pratetap, dan skrin utama yang berbeza',
-           'Baris kiraan peperiksaan dan peringatan malam sebelumnya', 'Dilukis semula pada 06:00 dan selepas setiap perubahan', 'Widget Kelas seterusnya dan Minggu', 'Arkib semester'],
+           'Baris kiraan peperiksaan dan peringatan malam sebelumnya', 'Dilukis semula pada 06:00 dan selepas setiap perubahan', 'Sebelas widget lagi', 'Nota, dengan Inbox, dan nota di bawah setiap peperiksaan', 'Arkib semester'],
   priceLine='Jadual Pro ialah Pas Semester untuk 6 bulan, dengan percubaan percuma 7 hari untuk pengguna baharu, atau Seumur hidup. Google Play menunjukkan harga dalam mata wang anda.',
   galH='Seluruh semester, pada satu helaian.', turn='sila lihat sebelah →', crossed='Dipangkah, dengan sengaja.',
   freeOn='Percuma di Google Play', fw0='Taip', fw1='sekali', fw2='sahaja.',
@@ -162,6 +163,7 @@ C = {
   nos=[('Akaun', 'Buka dan terus taip'), ('Awan', 'Disimpan di telefon ini'), ('Iklan', ''),
        ('Suapan sosial', 'Jadual anda milik anda'), ('Penjejak', 'Tiada analitik, tiada ID iklan')],
   widTitle=('Graph · widget', 'Graph dark · widget'), widNext='Kelas seterusnya', widToday='Hari ini', widWeek='Minggu',
+  widMore='Sembilan lagi, dengan Pro', widNames=['Peperiksaan seterusnya', 'Nota disemat', 'Jalur peperiksaan', 'Nota pantas', 'Peperiksaan (senarai)', 'Tarikh akhir', 'Senarai tugas', 'Nota terkini', 'Ulang kaji'],
   shot='Tangkapan skrin daripada aplikasi'),
  'id': dict(
   htmlLang='id', title='Jadual: jadwal kuliahmu, di layar utama dan layar kunci',
@@ -185,8 +187,8 @@ C = {
   h3='Layar kuncimu, sebagai jadwal.',
   p3='Pilih Hari ini atau Besok, letak daftar, ukuran dan detailnya, serta kertas di belakangnya. Jadual menggambar di sekitar jam dan ikonmu, jadi tidak ada yang penting tertutup. Dengan Pro, digambar ulang pukul 06.00 dan setiap kali jadwalmu berubah.',
   wallT=[('Hari ini · Graph', 'Layar kunci'), ('Besok · Jubin', 'Layar kunci · kertas Pro'), ('Hari ini · fotomu', 'Hitung mundur ujian · Pro')],
-  h4='Tiga widget, sesuai temamu.',
-  p4='Hari ini ukuran 4×2 gratis. Kuliah berikutnya 2×2 dan seminggu penuh 4×4 termasuk dalam Pro. Ketiganya mengikuti tema pilihanmu.',
+  h4='Dua belas widget, sesuai temamu.',
+  p4='Hari ini ukuran 4×2 gratis. Pro menambahkan sebelas lagi: Kuliah berikutnya, Minggu (seminggu penuh), Ujian berikutnya, Ujian sebaris, Daftar ujian, Tenggat, To-do, Catatan terbaru, Bahan ujian, Catatan disematkan, dan Catatan cepat. Semuanya mengikuti tema pilihanmu.',
   widK='Widget Hari ini di tiga kertas',
   h5='Jadual Papers.',
   p5lead='Aplikasi lain menyebutnya tema. Kami menyebutnya kertas, karena memang itu gunanya: tempat menulis minggumu.',
@@ -200,10 +202,10 @@ C = {
   leadK='Ingatkan aku', leadO=['5 mnt', '10 mnt', '15 mnt', '30 mnt'],
   nK=['Pengingat kuliah · gratis', 'Malam sebelum ujian · Pro'], fig3='Strip ujian di Hari ini',
   pk='Gratis, dan Pro.', ph='Jadwalnya gratis selamanya.', proCol='Pro menambahkan',
-  freeRows=['Hari ini dan Minggu, dengan minggu A/B', 'Kampus atau rutinitas mingguan', 'Pengingat kuliah dan kegiatan', 'Wallpaper: Hari ini atau Besok',
+  freeRows=['Hari ini dan Minggu, dengan minggu A/B', 'Kampus atau rutinitas mingguan', 'Pengingat kuliah dan kegiatan', 'Tugas, dengan jam tenggat dan pengingat', 'Wallpaper: Hari ini atau Besok',
             'Graph dan Graph dark', 'Widget Hari ini, 4×2', 'Ekspor dan impor file .jadual'],
   proRows=['Wallpaper: Seminggu penuh dan Kuliah berikutnya', 'Delapan kertas lagi, atau fotomu sendiri', 'Preset, dan layar utama yang berbeda',
-           'Baris hitung mundur ujian dan pengingat malam sebelumnya', 'Digambar ulang pukul 06.00 dan setelah setiap perubahan', 'Widget Kuliah berikutnya dan Minggu', 'Arsip semester'],
+           'Baris hitung mundur ujian dan pengingat malam sebelumnya', 'Digambar ulang pukul 06.00 dan setelah setiap perubahan', 'Sebelas widget lagi', 'Catatan, dengan Inbox, dan catatan di bawah setiap ujian', 'Arsip semester'],
   priceLine='Jadual Pro berupa Pass Semester untuk 6 bulan, dengan uji coba gratis 7 hari bagi pengguna baru, atau Seumur hidup. Google Play menampilkan harga dalam mata uangmu.',
   galH='Satu semester penuh, di satu lembar.', turn='balik halaman →', crossed='Dicoret, dengan sengaja.',
   freeOn='Gratis di Google Play', fw0='Ketik', fw1='sekali', fw2='saja.',
@@ -220,6 +222,7 @@ C = {
   nos=[('Akun', 'Buka dan langsung ketik'), ('Cloud', 'Tersimpan di ponsel ini'), ('Iklan', ''),
        ('Feed sosial', 'Jadwalmu tetap milikmu'), ('Pelacak', 'Tanpa analitik, tanpa ID iklan')],
   widTitle=('Graph · widget', 'Graph dark · widget'), widNext='Kuliah berikutnya', widToday='Hari ini', widWeek='Minggu',
+  widMore='Sembilan widget lagi dengan Pro', widNames=['Ujian berikutnya', 'Catatan disematkan', 'Ujian sebaris', 'Catatan cepat', 'Daftar ujian', 'Tenggat', 'To-do', 'Catatan terbaru', 'Bahan ujian'],
   shot='Tangkapan layar dari aplikasi'),
 }
 
@@ -327,15 +330,31 @@ def widget_panel(c, prefix, tag, i):
     wall = '#3a4456' if dark else '#8a9bb3'
     label = 'rgba(236,232,220,.85)' if dark else '#1b2233'
     lab = f'font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:{label}'
-    img = lambda k, w, h: (f'<img src="{prefix}wid_{tag}_{k}.jpg" alt="{e(c["shot"])}" width="{w}" height="{h}" loading="lazy" '
+    img = lambda k, w, h: (f'<img src="{prefix}wid2_{tag}_{k}.jpg" alt="{e(c["shot"])}" width="{w}" height="{h}" loading="lazy" '
                            f'style="display:block;width:{w}px;height:{h}px;border-radius:20px">')
     return (f'<div data-wid="" style="border-radius:8px;overflow:hidden;outline:1.5px solid rgb(var(--k));background:{wall};'
             'padding:28px 28px 32px;display:flex;flex-direction:column;gap:22px;width:412px;max-width:100%;box-sizing:border-box">'
             f'<div style="{lab};font-size:12px">{e(c["widTitle"][i])}</div>'
-            f'<div style="display:flex;gap:12px;align-items:flex-start">{img("next", 172, 224)}'
+            f'<div style="display:flex;gap:12px;align-items:flex-start">{img("next", 172, 172)}'
             f'<div style="{lab};line-height:1.7;padding-top:4px">2 × 2<br>{e(c["widNext"])}</div></div>'
-            f'<div>{img("today", 356, 221)}<div style="{lab};margin-top:8px">4 × 2 · {e(c["widToday"])}</div></div>'
-            f'<div>{img("week", 356, 458)}<div style="{lab};margin-top:8px">4 × 4 · {e(c["widWeek"])}</div></div></div>')
+            f'<div>{img("today", 356, 172)}<div style="{lab};margin-top:8px">4 × 2 · {e(c["widToday"])}</div></div>'
+            f'<div>{img("week", 356, 356)}<div style="{lab};margin-top:8px">4 × 4 · {e(c["widWeek"])}</div></div></div>')
+
+
+def widget_more(c, prefix):
+    lab = 'font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#1b2233'
+    # (file kind, css width, css height, grid size); names in c['widNames'] follow this order
+    items = [('next_exam', 226, 226, '2 × 2'), ('note_pinned', 226, 226, '2 × 2'), ('exam_strip', 464, 96, '4 × 1'),
+             ('quick_note', 464, 96, '4 × 1'), ('exams', 464, 224, '4 × 2'), ('due', 464, 224, '4 × 2'),
+             ('todo', 464, 224, '4 × 2'), ('notes_latest', 464, 224, '4 × 2'), ('revise', 464, 224, '4 × 2')]
+    cell = lambda i: (f'<div><img src="{prefix}wid_light_{items[i][0]}.jpg" alt="{e(c["shot"])}" width="{items[i][1]}" height="{items[i][2]}" '
+                      f'loading="lazy" style="display:block;width:{items[i][1]}px;max-width:100%;height:auto;border-radius:20px">'
+                      f'<div style="{lab};margin-top:8px">{items[i][3]} · {e(c["widNames"][i])}</div></div>')
+    box = lambda cells: ('<div data-wid="" style="border-radius:8px;overflow:hidden;outline:1.5px solid rgb(var(--k));background:#8a9bb3;'
+                         'padding:28px 28px 32px;display:flex;flex-direction:column;gap:22px;width:520px;max-width:100%;box-sizing:border-box">'
+                         + cells + '</div>')
+    pair = '<div style="display:flex;gap:12px;flex-wrap:wrap">' + cell(0) + cell(1) + '</div>'
+    return box(pair + cell(4) + cell(2) + cell(5)) + box(cell(3) + cell(6) + cell(7) + cell(8))
 
 
 THREAD = 'https://www.reddit.com/r/indotech/comments/1x4w0yr/'
@@ -647,6 +666,10 @@ def page(lang):
 <div style="display:flex;flex-wrap:wrap;gap:24px;margin-top:48px">
 {widget_panel(c, shots, 'light', 0)}
 {widget_panel(c, shots, 'dark', 1)}
+</div>
+<div data-r="" style="margin-top:64px;{serif};font-style:italic;font-size:24px">{e(c['widMore'])}</div>
+<div style="display:flex;flex-wrap:wrap;gap:24px;margin-top:16px">
+{widget_more(c, shots)}
 </div>
 <div data-r="" style="margin-top:40px;{serif};font-style:italic;font-size:24px">{e(c['widK'])}</div>
 <div style="display:flex;flex-wrap:wrap;gap:20px;margin-top:16px">
