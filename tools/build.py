@@ -48,8 +48,8 @@ LOGO = ('<span aria-hidden="true" style="position:relative;display:inline-block;
 
 C = {
  'en': dict(
-  htmlLang='en', title='Jadual: your class timetable, on your home and lock screen',
-  desc='Jadual is an Android class timetable for students. Type your timetable once and see it as widgets and as a lock screen wallpaper. Offline, no account, no ads. English, Malay, Indonesian.',
+  htmlLang='en', title='Jadual: your weekly timetable, on your home and lock screen',
+  desc='Jadual is a weekly timetable app for Android, made for classes and work. Type your timetable once and see it as widgets and as a lock screen wallpaper. Offline, no account, no ads. English, Malay, Indonesian.',
   navWeek='The week', navWall='Wallpaper', navWid='Widgets', navThemes='Papers', getApp='Get the app',
   kicker='Android timetable · Offline · EN / MS / ID', tagline='Type your timetable once. See it everywhere.',
   heroP='On your home screen as a widget, and on your lock screen as a wallpaper drawn around your clock. For a semester or a weekly routine. No account, no cloud, no ads.',
@@ -107,8 +107,8 @@ C = {
   widMore='Nine more, with Pro', widNames=['Next exam', 'Pinned note', 'Exam strip', 'Quick note', 'Exams', 'Due', 'To-do', 'Latest notes', 'Revise'],
   shot='Screenshot from the app'),
  'ms': dict(
-  htmlLang='ms', title='Jadual: jadual kelas anda, di skrin utama dan skrin kunci',
-  desc='Jadual ialah aplikasi jadual kelas Android untuk pelajar. Taip jadual anda sekali dan lihat sebagai widget dan sebagai latar skrin kunci. Luar talian, tiada akaun, tiada iklan.',
+  htmlLang='ms', title='Jadual: jadual mingguan anda, di skrin utama dan skrin kunci',
+  desc='Jadual ialah aplikasi jadual mingguan Android untuk kelas dan kerja. Taip jadual anda sekali dan lihat sebagai widget dan sebagai latar skrin kunci. Luar talian, tiada akaun, tiada iklan.',
   navWeek='Minggu', navWall='Latar skrin', navWid='Widget', navThemes='Kertas', getApp='Dapatkan apl',
   kicker='Jadual Android · Luar talian · EN / MS / ID', tagline='Taip jadual anda sekali. Lihat di mana-mana.',
   heroP='Di skrin utama sebagai widget, dan di skrin kunci sebagai latar skrin yang dilukis di sekitar jam anda. Untuk satu semester atau rutin mingguan. Tiada akaun, tiada awan, tiada iklan.',
@@ -166,8 +166,8 @@ C = {
   widMore='Sembilan lagi, dengan Pro', widNames=['Peperiksaan seterusnya', 'Nota disemat', 'Jalur peperiksaan', 'Nota pantas', 'Peperiksaan (senarai)', 'Tarikh akhir', 'Senarai tugas', 'Nota terkini', 'Ulang kaji'],
   shot='Tangkapan skrin daripada aplikasi'),
  'id': dict(
-  htmlLang='id', title='Jadual: jadwal kuliahmu, di layar utama dan layar kunci',
-  desc='Jadual adalah aplikasi jadwal kuliah Android untuk mahasiswa. Ketik jadwalmu sekali dan lihat sebagai widget dan wallpaper layar kunci. Luring, tanpa akun, tanpa iklan.',
+  htmlLang='id', title='Jadual: jadwal mingguanmu, di layar utama dan layar kunci',
+  desc='Jadual adalah aplikasi jadwal mingguan Android untuk kuliah dan kerja. Ketik jadwalmu sekali dan lihat sebagai widget dan wallpaper layar kunci. Luring, tanpa akun, tanpa iklan.',
   navWeek='Minggu', navWall='Wallpaper', navWid='Widget', navThemes='Kertas', getApp='Unduh',
   kicker='Jadwal Android · Luring · EN / MS / ID', tagline='Ketik jadwalmu sekali. Lihat di mana saja.',
   heroP='Di layar utama sebagai widget, dan di layar kunci sebagai wallpaper yang digambar di sekitar jammu. Untuk satu semester atau rutinitas mingguan. Tanpa akun, tanpa cloud, tanpa iklan.',
