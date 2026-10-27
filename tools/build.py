@@ -14,7 +14,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 BASE = 'https://haziqlucii.github.io/jadual-site/'
-CONTACT = 'haziq.support.dev@gmail.com'
+CONTACT = 'jadual.support.app@gmail.com'
 TIKTOK = 'https://www.tiktok.com/@itsjadual.app'
 YOUTUBE = 'https://www.youtube.com/@jadualapp'
 STORE = 'https://play.google.com/store/apps/details?id=io.github.haziqlucii.jadual'
