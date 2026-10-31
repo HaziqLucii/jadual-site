@@ -769,7 +769,7 @@ def page(lang):
 </div>
 <div style="margin-top:140px;padding-top:18px;border-top:1.5px solid rgb(var(--k));display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;font-size:13px;font-weight:500">
 <span>© 2026 Jadual</span>
-<div style="display:flex;gap:20px"><a href="{up}privacy/" style="text-decoration:none">{e(c['privacy'])}</a><a href="{up}terms/" style="text-decoration:none">{e(c['terms'])}</a><a href="{up}changelog/" style="text-decoration:none">Changelog</a><a href="{TIKTOK}" target="_blank" rel="noopener" style="text-decoration:none">TikTok</a><a href="{YOUTUBE}" target="_blank" rel="noopener" style="text-decoration:none">YouTube</a><a href="mailto:{CONTACT}" style="text-decoration:none">{e(c['contact'])}</a></div>
+<div style="display:flex;gap:20px"><a href="{up}privacy/" style="text-decoration:none">{e(c['privacy'])}</a><a href="{up}terms/" style="text-decoration:none">{e(c['terms'])}</a><a href="{up}changelog/" style="text-decoration:none">Changelog</a><a href="{up}playbook/" style="text-decoration:none">Playbook</a><a href="{TIKTOK}" target="_blank" rel="noopener" style="text-decoration:none">TikTok</a><a href="{YOUTUBE}" target="_blank" rel="noopener" style="text-decoration:none">YouTube</a><a href="mailto:{CONTACT}" style="text-decoration:none">{e(c['contact'])}</a></div>
 </div>
 </footer>
 </div>
@@ -783,7 +783,7 @@ def page(lang):
 
 
 def sitemap():
-    urls = ['', 'ms/', 'id/', 'privacy/', 'terms/', 'changelog/', 'links/']
+    urls = ['', 'ms/', 'id/', 'privacy/', 'terms/', 'changelog/', 'playbook/', 'links/']
     body = ''.join(f'<url><loc>{BASE}{u}</loc></url>' for u in urls)
     (ROOT / 'sitemap.xml').write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
