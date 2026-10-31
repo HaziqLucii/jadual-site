@@ -73,6 +73,22 @@
     }
     wt.to({}, { duration: .8 });
 
+    var nsec = q('[data-notes]')[0], nframes = q('[data-nframe]'), nsteps = q('[data-nstep]');
+    if (nsec && wide && window.innerHeight >= 800 && nframes.length === 4 && nsteps.length === 4) {
+      nsec.setAttribute('data-live', '1');
+      nsec.style.height = '100vh';
+      nsec.style.paddingTop = '90px';
+      nsec.style.paddingBottom = '32px';
+      var nt = g.timeline({ scrollTrigger: { trigger: nsec, start: 'top top', end: '+=200%', pin: true, scrub: .5, anticipatePin: 1 } });
+      for (var j = 1; j < 4; j++) {
+        nt.to(nframes[j - 1], { opacity: 0, yPercent: -4, duration: .5 }, j)
+          .fromTo(nframes[j], { opacity: 0, yPercent: 4 }, { opacity: 1, yPercent: 0, duration: .5 }, j)
+          .to(nsteps[j - 1], { opacity: .4, duration: .3 }, j)
+          .to(nsteps[j], { opacity: 1, duration: .3 }, j);
+      }
+      nt.to({}, { duration: .8 });
+    }
+
     g.from(q('[data-wid]'), { y: 60, opacity: 0, rotate: function (i) { return i ? 1.5 : -1.5; }, duration: .9, ease: 'power3.out', stagger: .12,
       scrollTrigger: { trigger: q('[data-wid]')[0], start: 'top 85%' } });
 
