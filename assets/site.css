@@ -77,3 +77,11 @@ a:focus-visible{outline:2px solid var(--rule);outline-offset:3px}
 [data-live] .n-frame { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
 [data-live] .n-frame:not(:first-child) { opacity: 0; }
 [data-live] .n-step:not(:first-child) { opacity: .4; }
+
+.play-btn{display:inline-flex;flex:none;align-items:center;justify-content:center;gap:13px;min-height:58px;box-sizing:border-box;padding:11px 25px 11px 20px;border:1.5px solid rgb(var(--k));border-radius:2px;background:rgb(var(--k));color:rgb(var(--g));text-decoration:none}
+.play-btn__logo{display:block;flex:none;width:30px;height:30px}
+.play-btn__text{display:flex;flex-direction:column;gap:2px;text-align:left;white-space:nowrap;line-height:1.15}
+.play-btn__eyebrow{font-size:10px;font-weight:600;letter-spacing:.12em}
+.play-btn__name{font-size:20px;font-weight:600;letter-spacing:-.02em}
+.play-btn:hover{color:rgb(var(--g))}
+.play-btn:focus-visible{outline:2px solid var(--rule);outline-offset:4px}

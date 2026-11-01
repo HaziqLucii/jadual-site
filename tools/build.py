@@ -469,10 +469,15 @@ def page(lang):
         f'text-decoration:none;font-size:13px;font-weight:600;'
         + ('background:rgb(var(--k));color:rgb(var(--g))' if k == lang else 'color:rgb(var(--k))') + f'">{t}</a>'
         for k, t in (('en', 'EN'), ('ms', 'BM'), ('id', 'ID')))
-    play = (f'<a href="{STORE_SITE}" style="display:inline-flex;align-items:center;gap:14px;height:58px;padding:0 22px;background:rgb(var(--k));'
-            'color:rgb(var(--g));border-radius:2px;text-decoration:none"><span style="display:flex;flex-direction:column;line-height:1.15">'
-            f'<span style="font-size:10px;font-weight:600;letter-spacing:.14em">{e(c["getOn"])}</span>'
-            '<span style="font-size:18px;font-weight:600">Google Play</span></span></a>')
+    play = (f'<a class="play-btn" href="{STORE_SITE}">'
+            '<svg class="play-btn__logo" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" focusable="false">'
+            '<path fill="#FFD500" d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594z"/>'
+            '<path fill="#00A0FF" d="M1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924z"/>'
+            '<path fill="#00D95F" d="M13.544 10.989l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973z"/>'
+            '<path fill="#FF3A44" d="M13.544 13.056l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/></svg>'
+            '<span class="play-btn__text">'
+            f'<span class="play-btn__eyebrow">{e(c["getOn"])}</span>'
+            '<span class="play-btn__name">Google Play</span></span></a>')
     tiktok = (f'<a href="{TIKTOK}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:14px;height:58px;padding:0 22px;background:#FFE45C;'
               'color:#1b2233;border:1.5px solid #1b2233;border-radius:2px;text-decoration:none">'
               '<svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" style="flex:none"><path fill="currentColor" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg><span style="display:flex;flex-direction:column;line-height:1.15">'
@@ -496,7 +501,7 @@ def page(lang):
                     f'{e(c["wallT"][i][1])}</span></span></div>'
                     for i, (n, _) in enumerate(WALLS))
     wphones = ''.join(f'<div data-wph="" style="position:absolute;inset:0;overflow:hidden;border-radius:26px;outline:1.5px solid rgb(var(--k));'
-                      f'outline-offset:6px;opacity:{1 if i == 0 else 0}"><img src="{shots}{f}.jpg" alt="{e(c["wallT"][i][0])}" width="290" height="644" '
+                      f'outline-offset:0;opacity:{1 if i == 0 else 0}"><img src="{shots}{f}.jpg" alt="{e(c["wallT"][i][0])}" width="290" height="644" '
                       'loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover"></div>'
                       for i, (_, f) in enumerate(WALLS))
     routine = ''.join(f'<div style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:baseline;padding:7px 0;'
@@ -540,7 +545,7 @@ def page(lang):
                    for h, k, m, rows in ((c['free'], '', '·', c['freeRows']), ('Pro', c['proCol'], '+', c['proRows'])))
     gallery = ''.join(
         '<div style="flex:none;width:252px;display:flex;flex-direction:column;gap:14px">'
-        + phone(f'{shots}{s}.jpg', t, 252, 560, 22, offset=4)
+        + phone(f'{shots}{s}.jpg', t, 252, 560, 22, offset=0)
         + f'<div style="display:grid;grid-template-columns:30px minmax(0,1fr);gap:8px;margin-top:6px"><span style="font-family:\'Instrument Serif\',serif;'
           f'font-style:italic;font-size:20px;color:var(--rule)">{i + 1}.</span><div><div style="font-family:\'Instrument Serif\',serif;font-size:22px;'
           f'line-height:1">{e(t)}</div><div style="font-size:13px;line-height:1.5;color:rgba(var(--k),.75);margin-top:5px">{e(d)}</div></div></div></div>'
@@ -570,13 +575,13 @@ def page(lang):
     def nframe(i):
         alt = c['noteAlts'][i]
         if i in (0, 2):
-            inner = phone(f"{shots}{'notes_editor' if i == 0 else 'notes_canvas'}.jpg", alt, 290, 644, 26, offset=6)
+            inner = phone(f"{shots}{'notes_editor' if i == 0 else 'notes_canvas'}.jpg", alt, 290, 644, 26, offset=0)
         elif i == 1:
             inner = (f'<img src="{shots}note_today.jpg" alt="{e(alt)}" width="700" height="392" loading="lazy" decoding="async" '
-                     'style="display:block;width:340px;max-width:100%;height:auto;border-radius:6px;outline:1.5px solid rgb(var(--k));outline-offset:6px">')
+                     'style="display:block;width:340px;max-width:100%;height:auto;border-radius:6px;outline:1.5px solid rgb(var(--k));outline-offset:0">')
         else:
             inner = (f'<img src="{shots}wid_light_revise.jpg" alt="{e(alt)}" width="934" height="580" loading="lazy" decoding="async" '
-                     'style="display:block;width:340px;max-width:100%;height:auto;border-radius:20px;outline:1.5px solid rgb(var(--k));outline-offset:6px">')
+                     'style="display:block;width:340px;max-width:100%;height:auto;border-radius:20px;outline:1.5px solid rgb(var(--k));outline-offset:0">')
         cap = (f'<figcaption style="margin-top:18px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;'
                f'color:rgba(var(--k),.7);text-align:center">{e(c["fig"])} 4 · {e(c["stepW"])} {i + 1}/4</figcaption>')
         return f'<figure data-nframe="" class="n-frame"><div>{inner}{cap}</div></figure>'
@@ -646,7 +651,7 @@ def page(lang):
 </div>
 </div>
 <div data-hpar="" style="position:relative;z-index:1;justify-self:center"><div data-hphone="" style="display:flex;flex-direction:column;gap:12px">
-{phone(shots + 'today.jpg', c['gallery'][1][0], 290, 644, 26, '1.5deg')}
+{phone(shots + 'today.jpg', c['gallery'][1][0], 290, 644, 26, '1.5deg', offset=0)}
 <div style="display:flex;justify-content:space-between;{serif};font-style:italic;font-size:17px;color:rgba(var(--k),.75);margin-top:10px"><span>{e(c['fig'])} 1</span><span>{e(c['fig1'])}</span></div>
 </div></div>
 <span data-stamp="" style="position:absolute;right:clamp(20px,6vw,90px);top:110px;width:120px;height:120px;border:2px solid var(--rule);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--rule);transform:rotate(-12deg);{serif};z-index:3"><span style="font-style:italic;font-size:56px;line-height:.9">A+</span><span style="font-size:11px;font-family:'IBM Plex Sans',sans-serif;font-weight:600;letter-spacing:.1em">{e(c['week7'])}</span></span>
@@ -688,7 +693,7 @@ def page(lang):
 </div>
 </div>
 <div data-cphone="" style="justify-self:center;display:flex;flex-direction:column;gap:12px">
-{phone(shots + 'week.jpg', c['gallery'][2][0], 290, 644, 26, '-1.5deg')}
+{phone(shots + 'week.jpg', c['gallery'][2][0], 290, 644, 26, '-1.5deg', offset=0)}
 <div style="display:flex;justify-content:space-between;{serif};font-style:italic;font-size:17px;color:rgba(var(--k),.75);margin-top:10px"><span>{e(c['fig'])} 2</span><span>{e(c['fig2'])}</span></div>
 </div>
 </section>
