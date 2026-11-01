@@ -63,3 +63,25 @@ a:focus-visible{outline:2px solid var(--rule);outline-offset:3px}
 .doc a.pic-link{display:block;overflow:hidden;border:1.5px solid rgb(var(--k));margin:0 0 8px}
 .doc img.pic{display:block;width:103.45%;max-width:none;height:auto;margin-left:-3.45%}
 .doc .pics-links{margin:0 0 4px}
+
+/* Notes scene: steps on the left, the four figures on the right. Static by default (phones, reduced motion,
+   short screens); landing.js sets data-live on wide screens and pins it. */
+.n-steps { list-style: none; margin: 36px 0 0; padding: 0; max-width: 520px; }
+.n-step { display: flex; gap: 16px; padding: 0 0 22px; }
+.n-dot { flex: none; width: 34px; height: 34px; border-radius: 50%; background: #FFE45C; border: 2px solid rgb(var(--k)); display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 15px; }
+.n-t { font-family: 'Instrument Serif', serif; font-size: 30px; line-height: 1.05; }
+.n-d { margin-top: 4px; font-size: 14.5px; line-height: 1.5; color: rgba(var(--k), .85); }
+.n-stage { display: flex; flex-direction: column; align-items: center; gap: 44px; }
+.n-frame { margin: 0; }
+[data-live] .n-stage { display: block; position: relative; width: 340px; height: 644px; margin: calc((var(--ws, 1) - 1) * 322px) auto; transform: scale(var(--ws, 1)); transform-origin: 50% 50%; }
+[data-live] .n-frame { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+[data-live] .n-frame:not(:first-child) { opacity: 0; }
+[data-live] .n-step:not(:first-child) { opacity: .4; }
+
+.play-btn{display:inline-flex;flex:none;align-items:center;justify-content:center;gap:13px;min-height:58px;box-sizing:border-box;padding:11px 25px 11px 20px;border:1.5px solid rgb(var(--k));border-radius:2px;background:rgb(var(--k));color:rgb(var(--g));text-decoration:none}
+.play-btn__logo{display:block;flex:none;width:30px;height:30px}
+.play-btn__text{display:flex;flex-direction:column;gap:2px;text-align:left;white-space:nowrap;line-height:1.15}
+.play-btn__eyebrow{font-size:10px;font-weight:600;letter-spacing:.12em}
+.play-btn__name{font-size:20px;font-weight:600;letter-spacing:-.02em}
+.play-btn:hover{color:rgb(var(--g))}
+.play-btn:focus-visible{outline:2px solid var(--rule);outline-offset:4px}

@@ -34,7 +34,7 @@ RAW = [('ds', 0, 480, 590, 'DK 3'), ('la', 0, 600, 710, 'DK 5'), ('cn', 0, 840, 
        ('db', 1, 900, 1010, 'BT 1')]
 KOPI_HL = ['#EDD66E', '#D6DC92', '#A9D7A0', '#E8B27E', '#F2A9B6', '#9DBBEA', '#C5B0E0', '#E07A5F']
 KOPI_NAMES = ['Kaya', 'Limau', 'Pandan', 'Teh tarik', 'Bandung', 'Telang', 'Ais kacang', 'Cili']
-SOLO = ['Graph', 'Graph dark', 'Ledger', 'Kraft', 'Washi', 'Ulangkaji']
+SOLO = ['Graph', 'Graph dark', 'Ledger', 'Kraft', 'Washi', 'Ulangkaji', 'Arang']
 KOPI = ['Kopitiam', 'Marmar', 'Jubin', 'Papan menu']
 ROUTINE_HL = ['#9FE8C8', '#FFB070', '#C6A8FF']
 # The app icon in the nav, from the design (a timetable of highlighter blocks).
@@ -51,7 +51,15 @@ C = {
   htmlLang='en', title='Jadual: your weekly timetable, on your home and lock screen',
   desc='Jadual is a weekly timetable app for Android, made for classes and work. Type your timetable once and see it as widgets and as a lock screen wallpaper. Offline, no account, no ads. English, Malay, Indonesian.',
   navWeek='The week', navWall='Wallpaper', navWid='Widgets', navThemes='Papers', getApp='Get the app',
-  kicker='Android timetable · Offline · EN / MS / ID', tagline='Type your timetable once. See it everywhere.',
+  navNotes='Notes', navPlay='Playbook', playLine='The free illustrated guide (PDF)', newTag='NEW', followLbl='Follow', q7='Question 7.', stepW='Step',
+   noteH='Your notes. Right beside your classes.',
+   noteP='Write, highlight and draw what matters. Bring a note back under its class on Today, or revisit it while revising for an exam.',
+  noteSteps=[('Write it on the class.', 'Pick the subject, add to-do boxes, highlight what matters.'),
+             ('It comes back.', 'Turn on Show again, and the title and open to-dos return under that class on Today.'),
+             ('Draw it.', 'Shapes, arrows and a pen. Zoom from 5% to 800%.'),
+             ('Revise it.', 'The Revise widget shows the notes for your next exam.')],
+  noteAlts=['A note in the Jadual editor with a to-do and a highlight', 'Today with the note under its class', 'The Drawing canvas with a diagram', 'The Revise widget for the next exam'],
+  kicker='Android timetable · Offline · EN / BM / ID', tagline='Type your timetable once. See it everywhere.',
   heroP='On your home screen as a widget, and on your lock screen as a wallpaper drawn around your clock. For a semester or a weekly routine. No account, no cloud, no ads.',
   getOn='GET IT ON', watch='Watch a week fill in ↓', followOn='FOLLOW ON', watchOn='WATCH ON', followCap='Short clips on what is coming next', fig='Fig.', fig1='Friday, 11:18', week7='WEEK 7',
   q1='Question 1.', q2='Question 2.', q3='Question 3.', q4='Question 4.', q5='Question 5.', q6='Question 6.',
@@ -59,7 +67,7 @@ C = {
   p1='One subject can have many slots: a lecture, a tutorial, a lab on alternating weeks. Add each once and the week builds itself, every subject marked in its own highlighter.',
   of16='of 16 slots · 7 subjects', weekTitle='Week 7',
   r1k='Or a weekly routine.',
-  r1p='For a gym, tuition or ngaji week. The same idea, with activities instead of subjects: no codes, no semester, no A/B weeks.',
+  r1p='For a gym, tuition or ngaji week. The same idea, with activities instead of subjects: no codes, no semester, no A/B weeks. Add one-off events too, and with Pro, show your phone calendar.',
   rAct=[('Gym', 'Tue, Thu · 20:00'), ('Tuition', 'Sat · 09:00'), ('Kelas Ngaji', 'Mon, Wed · 20:30')],
   days7=['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
   overlap='Tue: CS201 and CS230 overlap by 50 min.', moved='Class updated. Tap to undo.',
@@ -74,8 +82,8 @@ C = {
   widK='The Today widget on three papers',
   h5='Jadual Papers.',
   p5lead='Other apps call them themes. We call them papers, because that is what they are: something to write your week on.',
-  p5='Each paper has its own ruling, margin, ink, heading font and highlighters. Graph and Graph dark are free. The other eight come with Pro, including Ulangkaji for exam season and the Kopitiam set.',
-  paperGrp='Papers', paperNote='6 papers · 2 free', kopiSet='Kopitiam set', kopiNote='4 papers · Pro',
+  p5='Each paper has its own ruling, margin, ink, heading font and highlighters. Graph and Graph dark are free. The other nine come with Pro, including Ulangkaji for exam season, Arang for a dark, flat page and the Kopitiam set.',
+  paperGrp='Papers', paperNote='7 papers · 2 free', kopiSet='Kopitiam set', kopiNote='4 papers · Pro',
   kopiKick='A set of four papers · Pro',
   kopiLine='Kopitiam, Marmar, Jubin and Papan menu. Marble tables, floor tiles, the enamel cup and the chalk menu board, with a songket band in the margin. Highlighters named after the drinks and the food: kaya, pandan, teh tarik, bandung, bunga telang, ais kacang, cili.',
   free='Free', examSeason='Pro · exam season',
@@ -85,9 +93,9 @@ C = {
   nK=['Class reminder · free', 'Evening before an exam · Pro'], fig3='The exam strip on Today',
   pk='Free, and Pro.', ph='The timetable is free for good.', proCol='Pro adds',
   freeRows=['Today and Week, with A/B weeks', 'University or weekly routine', 'Class and activity reminders', 'Assignments, with due times and reminders', 'Wallpaper: Today or Tomorrow',
-            'Graph and Graph dark', 'Today widget, 4×2', 'Export and import a .jadual file'],
-  proRows=['Wallpaper: Whole week and Next class', 'Eight more papers, or your own photo', 'Presets, and a separate home screen',
-           'Exam countdown line and evening-before reminder', 'Redrawn at 06:00 and after every change', 'Eleven more widgets', 'Notes, with an Inbox, and notes under every exam', 'Semester archive'],
+            'Graph and Graph dark', 'Today widget, 4×2', 'Export and import a .jadual file', 'Auto backup to a folder'],
+  proRows=['Wallpaper: Whole week and Next class', 'Nine more papers, or your own photo', 'Presets, and a separate home screen',
+           'Exam countdown line and evening-before reminder', 'Redrawn at 06:00 and after every change', 'Eleven more widgets', 'Notes with Drawing, highlights and templates', 'Eight more highlighter colours, and your own', 'Semester archive'],
   priceLine='Jadual Pro is a Semester Pass for 6 months, with a 7-day free trial if you are new, or Lifetime. Google Play shows the price in your currency.',
   galH='The whole semester, on one sheet.', turn='turn over →', crossed='Crossed out, on purpose.',
   freeOn='Free on Google Play', fw0='Type', fw1='it', fw2='once.',
@@ -100,8 +108,9 @@ C = {
   gallery=[('First run', 'Name the semester once, or import a file.'), ('Today', 'Now, next, and the free gaps.'),
            ('Week', 'All seven days. A and B weeks, hold to move.'), ('Edit a slot', 'Chips for common times. Hold to delete.'),
            ('Subjects', 'Code, highlighter, lecturer, hours. Hold Delete to remove.'), ('Weekly routine', 'Activities, no codes, no semester.'),
-           ('Wallpaper', 'Built around your clock and icons.'), ('Jadual Papers', 'Ten papers. Two free.'),
-           ('Reminders', 'Before each class, and the evening before an exam.'), ('Archive', 'Past semesters, read-only, exportable. Pro.')],
+           ('Wallpaper', 'Built around your clock and icons.'), ('Jadual Papers', 'Eleven papers. Two free.'),
+           ('Notes', 'Text, drawings and a to-do per class. Pro.'), ('Reminders', 'Before each class, and the evening before an exam.'),
+           ('Auto backup', 'A copy in a folder you pick. Free.'), ('Archive', 'Past semesters, read-only, exportable. Pro.')],
   nos=[('An account', 'Open it and type'), ('The cloud', 'Stored on this phone'), ('Ads', ''),
        ('Social feeds', 'Your timetable stays yours'), ('Trackers', 'No analytics, no ad IDs')],
   widTitle=('Graph · widgets', 'Graph dark · widgets'), widNext='Next class', widToday='Today', widWeek='Week',
@@ -111,7 +120,15 @@ C = {
   htmlLang='ms', title='Jadual: jadual mingguan anda, di skrin utama dan skrin kunci',
   desc='Jadual ialah aplikasi jadual mingguan Android untuk kelas dan kerja. Taip jadual anda sekali dan lihat sebagai widget dan sebagai latar skrin kunci. Luar talian, tiada akaun, tiada iklan.',
   navWeek='Minggu', navWall='Latar skrin', navWid='Widget', navThemes='Kertas', getApp='Dapatkan apl',
-  kicker='Jadual Android · Luar talian · EN / MS / ID', tagline='Taip jadual anda sekali. Lihat di mana-mana.',
+  navNotes='Nota', navPlay='Playbook', playLine='Panduan bergambar percuma (PDF)', newTag='BARU', followLbl='Ikuti', q7='Soalan 7.', stepW='Langkah',
+   noteH='Nota anda. Di sisi kelas anda.',
+   noteP='Tulis, serlahkan dan lukis perkara penting. Paparkan semula nota di bawah kelasnya pada Hari ini, atau rujuk semula semasa mengulang kaji untuk peperiksaan.',
+  noteSteps=[('Tulis nota untuk kelas.', 'Pilih subjek, tambah kotak semak, serlahkan perkara penting.'),
+             ('Ia kembali.', 'Hidupkan Tunjuk semula, dan tajuk serta senarai semak yang belum selesai muncul semula di bawah kelas itu pada Hari ini.'),
+             ('Lukis.', 'Bentuk, anak panah dan pen. Zum dari 5% hingga 800%.'),
+             ('Ulang kaji.', 'Widget Ulang kaji menunjukkan nota untuk peperiksaan anda yang seterusnya.')],
+  noteAlts=['Nota dalam editor Jadual dengan senarai semak dan serlahan', 'Hari ini dengan nota di bawah kelasnya', 'Kanvas Lukisan dengan rajah', 'Widget Ulang kaji untuk peperiksaan seterusnya'],
+  kicker='Jadual Android · Luar talian · EN / BM / ID', tagline='Taip jadual anda sekali. Lihat di mana-mana.',
   heroP='Di skrin utama sebagai widget, dan di skrin kunci sebagai latar skrin yang dilukis di sekitar jam anda. Untuk satu semester atau rutin mingguan. Tiada akaun, tiada awan, tiada iklan.',
   getOn='DAPATKANNYA DI', watch='Lihat jadual seminggu terisi ↓', followOn='IKUTI DI', watchOn='TONTON DI', followCap='Klip pendek tentang kemas kini seterusnya', fig='Rajah', fig1='Jumaat, 11:18', week7='MINGGU 7',
   q1='Soalan 1.', q2='Soalan 2.', q3='Soalan 3.', q4='Soalan 4.', q5='Soalan 5.', q6='Soalan 6.',
@@ -119,7 +136,7 @@ C = {
   p1='Satu subjek boleh ada banyak slot: kuliah, tutorial, makmal pada minggu berselang. Tambah setiap satu sekali dan minggu anda tersusun sendiri, setiap subjek ditanda dengan pen penanda sendiri.',
   of16='daripada 16 slot · 7 subjek', weekTitle='Minggu 7',
   r1k='Atau rutin mingguan.',
-  r1p='Untuk minggu gim, tuisyen atau kelas mengaji. Idea yang sama, dengan aktiviti dan bukan subjek: tiada kod, tiada semester, tiada minggu A/B.',
+  r1p='Untuk gim, tuisyen atau kelas mengaji. Idea yang sama, dengan aktiviti dan bukan subjek: tiada kod, tiada semester, tiada minggu A/B. Tambah juga acara sekali sahaja, dan dengan Pro, paparkan kalendar telefon anda.',
   rAct=[('Gim', 'Sel, Kha · 20:00'), ('Tuisyen', 'Sab · 09:00'), ('Kelas mengaji', 'Isn, Rab · 20:30')],
   days7=['Isn', 'Sel', 'Rab', 'Kha', 'Jum', 'Sab', 'Ahd'],
   overlap='Sel: CS201 dan CS230 bertindih 50 min.', moved='Kelas dikemas kini. Ketik untuk batal.',
@@ -134,8 +151,8 @@ C = {
   widK='Widget Hari ini pada tiga kertas',
   h5='Jadual Papers.',
   p5lead='Aplikasi lain memanggilnya tema. Kami memanggilnya kertas, kerana itulah gunanya: tempat untuk menulis minggu anda.',
-  p5='Setiap kertas ada garisan, margin, dakwat, fon tajuk dan pen penanda sendiri. Graph dan Graph dark percuma. Lapan lagi disertakan dengan Pro, termasuk Ulangkaji untuk musim peperiksaan dan set Kopitiam.',
-  paperGrp='Kertas', paperNote='6 kertas · 2 percuma', kopiSet='Set Kopitiam', kopiNote='4 kertas · Pro',
+  p5='Setiap kertas ada garisan, margin, dakwat, fon tajuk dan pen penanda sendiri. Graph dan Graph dark percuma. Sembilan lagi disertakan dengan Pro, termasuk Ulangkaji untuk musim peperiksaan, Arang untuk halaman gelap dan rata, dan set Kopitiam.',
+  paperGrp='Kertas', paperNote='7 kertas · 2 percuma', kopiSet='Set Kopitiam', kopiNote='4 kertas · Pro',
   kopiKick='Set empat kertas · Pro',
   kopiLine='Kopitiam, Marmar, Jubin dan Papan menu. Meja marmar, jubin lantai, cawan enamel dan papan menu kapur, dengan jalur songket di margin. Pen penanda dinamakan sempena minuman dan makanan: kaya, pandan, teh tarik, bandung, bunga telang, ais kacang, cili.',
   free='Percuma', examSeason='Pro · musim peperiksaan',
@@ -144,10 +161,10 @@ C = {
   leadK='Ingatkan saya', leadO=['5 min', '10 min', '15 min', '30 min'],
   nK=['Peringatan kelas · percuma', 'Malam sebelum peperiksaan · Pro'], fig3='Jalur peperiksaan pada Hari ini',
   pk='Percuma, dan Pro.', ph='Jadual waktu anda percuma selamanya.', proCol='Pro menambah',
-  freeRows=['Hari ini dan Minggu, dengan minggu A/B', 'Universiti atau rutin mingguan', 'Peringatan kelas dan aktiviti', 'Tugasan, dengan tarikh dan masa akhir, serta peringatan', 'Latar skrin: Hari ini atau Esok',
-            'Graph dan Graph dark', 'Widget Hari ini, 4×2', 'Eksport dan import fail .jadual'],
-  proRows=['Latar skrin: Seluruh minggu dan Kelas seterusnya', 'Lapan kertas lagi, atau foto anda sendiri', 'Pratetap, dan skrin utama yang berbeza',
-           'Baris kiraan peperiksaan dan peringatan malam sebelumnya', 'Dilukis semula pada 06:00 dan selepas setiap perubahan', 'Sebelas widget lagi', 'Nota, dengan Inbox, dan nota di bawah setiap peperiksaan', 'Arkib semester'],
+  freeRows=['Hari ini dan Minggu, dengan minggu A/B', 'Universiti atau rutin mingguan', 'Peringatan kelas dan aktiviti', 'Tugasan, dengan tarikh akhir dan peringatan', 'Latar skrin: Hari ini atau Esok',
+            'Graph dan Graph dark', 'Widget Hari ini, 4×2', 'Eksport dan import fail .jadual', 'Sandaran automatik ke folder'],
+  proRows=['Latar skrin: Seluruh minggu dan Kelas seterusnya', 'Sembilan kertas lagi, atau foto anda sendiri', 'Pratetap, dan reka bentuk lain untuk skrin utama',
+           'Baris kiraan peperiksaan dan peringatan malam sebelumnya', 'Dilukis semula pada 06:00 dan selepas setiap perubahan', 'Sebelas widget lagi', 'Nota dengan Lukisan, serlahan dan templat', 'Lapan warna penanda lagi, dan warna anda sendiri', 'Arkib semester'],
   priceLine='Jadual Pro ialah Pas Semester untuk 6 bulan, dengan percubaan percuma 7 hari untuk pengguna baharu, atau Seumur hidup. Google Play menunjukkan harga dalam mata wang anda.',
   galH='Seluruh semester, pada satu helaian.', turn='sila lihat sebelah →', crossed='Dipangkah, dengan sengaja.',
   freeOn='Percuma di Google Play', fw0='Taip', fw1='sekali', fw2='sahaja.',
@@ -157,10 +174,11 @@ C = {
   now='Kini · 32 min lagi', next='Seterusnya · dalam 3 j 42 min',
   facts=[('Versi percuma, tiada had', 'Percuma kekal'), ('Data kekal di telefon', 'Anda sahaja'), ('Di skrin kunci anda', 'Sudah menunggu'), ('Pemasangan di Google Play', '200+')],
   gallery=[('Mula', 'Namakan semester sekali, atau import fail.'), ('Hari ini', 'Kini, seterusnya, dan waktu kosong.'),
-           ('Minggu', 'Tujuh hari. Minggu A dan B, tahan untuk alih.'), ('Ubah slot', 'Cip untuk waktu biasa. Tahan untuk padam.'),
-           ('Subjek', 'Kod, penanda, pensyarah, jam. Tahan Padam untuk buang.'), ('Rutin mingguan', 'Aktiviti, tanpa kod, tanpa semester.'),
-           ('Latar skrin', 'Dibina di sekitar jam dan ikon anda.'), ('Jadual Papers', 'Sepuluh kertas. Dua percuma.'),
-           ('Peringatan', 'Sebelum setiap kelas, dan malam sebelum peperiksaan.'), ('Arkib', 'Semester lalu, baca sahaja, boleh dieksport. Pro.')],
+           ('Minggu', 'Tujuh hari. Minggu A dan B, tekan lama untuk pindah.'), ('Ubah slot', 'Cip untuk waktu biasa. Tekan lama untuk padam.'),
+           ('Subjek', 'Kod, penanda, pensyarah, jam. Tekan lama Padam untuk buang.'), ('Rutin mingguan', 'Aktiviti, tanpa kod, tanpa semester.'),
+           ('Latar skrin', 'Dibina di sekitar jam dan ikon anda.'), ('Jadual Papers', 'Sebelas kertas. Dua percuma.'),
+           ('Nota', 'Teks, lukisan dan senarai semak bagi setiap kelas. Pro.'), ('Peringatan', 'Sebelum setiap kelas, dan malam sebelum peperiksaan.'),
+           ('Sandaran automatik', 'Salinan dalam folder pilihan anda. Percuma.'), ('Arkib', 'Semester terdahulu, lihat sahaja, boleh dieksport. Pro.')],
   nos=[('Akaun', 'Buka dan terus taip'), ('Awan', 'Disimpan di telefon ini'), ('Iklan', ''),
        ('Suapan sosial', 'Jadual anda milik anda'), ('Penjejak', 'Tiada analitik, tiada ID iklan')],
   widTitle=('Graph · widget', 'Graph dark · widget'), widNext='Kelas seterusnya', widToday='Hari ini', widWeek='Minggu',
@@ -170,7 +188,15 @@ C = {
   htmlLang='id', title='Jadual: jadwal mingguanmu, di layar utama dan layar kunci',
   desc='Jadual adalah aplikasi jadwal mingguan Android untuk kuliah dan kerja. Ketik jadwalmu sekali dan lihat sebagai widget dan wallpaper layar kunci. Luring, tanpa akun, tanpa iklan.',
   navWeek='Minggu', navWall='Wallpaper', navWid='Widget', navThemes='Kertas', getApp='Unduh',
-  kicker='Jadwal Android · Luring · EN / MS / ID', tagline='Ketik jadwalmu sekali. Lihat di mana saja.',
+  navNotes='Catatan', navPlay='Playbook', playLine='Panduan bergambar gratis (PDF)', newTag='BARU', followLbl='Ikuti', q7='Soal 7.', stepW='Langkah',
+   noteH='Catatanmu. Berdampingan dengan jadwal kelasmu.',
+   noteP='Tulis, sorot, dan gambar hal-hal penting. Tampilkan kembali catatan di bawah kelasnya di Hari ini, atau baca lagi saat belajar untuk ujian.',
+  noteSteps=[('Tulis di kelas.', 'Pilih mata kuliah, tambahkan kotak centang, sorot yang penting.'),
+             ('Catatan kembali.', 'Aktifkan Tampilkan lagi, dan judul serta to-do yang belum selesai muncul lagi di bawah kelas itu di Hari ini.'),
+             ('Gambar.', 'Bentuk, panah, dan pena. Zoom dari 5% sampai 800%.'),
+             ('Pelajari lagi.', 'Widget Bahan ujian menampilkan catatan untuk ujian berikutnya.')],
+  noteAlts=['Catatan di editor Jadual dengan to-do dan sorotan', 'Hari ini dengan catatan di bawah kelasnya', 'Kanvas Gambar dengan diagram', 'Widget Bahan ujian untuk ujian berikutnya'],
+  kicker='Jadwal Android · Luring · EN / BM / ID', tagline='Ketik jadwalmu sekali. Lihat di mana saja.',
   heroP='Di layar utama sebagai widget, dan di layar kunci sebagai wallpaper yang digambar di sekitar jammu. Untuk satu semester atau rutinitas mingguan. Tanpa akun, tanpa cloud, tanpa iklan.',
   getOn='TERSEDIA DI', watch='Lihat jadwal seminggu terisi ↓', followOn='IKUTI DI', watchOn='TONTON DI', followCap='Klip singkat soal update berikutnya', fig='Gambar', fig1='Jumat, 11.18', week7='MINGGU 7',
   q1='Soal 1.', q2='Soal 2.', q3='Soal 3.', q4='Soal 4.', q5='Soal 5.', q6='Soal 6.',
@@ -178,7 +204,7 @@ C = {
   p1='Satu mata kuliah bisa punya banyak slot: kuliah, tutorial, praktikum di minggu bergantian. Tambahkan masing-masing sekali dan jadwal seminggu tersusun sendiri, tiap mata kuliah ditandai dengan stabilonya sendiri.',
   of16='dari 16 slot · 7 mata kuliah', weekTitle='Minggu 7',
   r1k='Atau rutinitas mingguan.',
-  r1p='Untuk minggu gym, les atau mengaji. Idenya sama, dengan kegiatan sebagai ganti mata kuliah: tanpa kode, tanpa semester, tanpa minggu A/B.',
+  r1p='Untuk jadwal gym, les atau mengaji. Idenya sama, dengan kegiatan sebagai ganti mata kuliah: tanpa kode, tanpa semester, tanpa minggu A/B. Acara sekali jalan juga bisa ditambahkan, dan dengan Pro, acara dari kalender ponselmu ikut tampil.',
   rAct=[('Gym', 'Sel, Kam · 20.00'), ('Les', 'Sab · 09.00'), ('Mengaji', 'Sen, Rab · 20.30')],
   days7=['Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab', 'Min'],
   overlap='Sel: CS201 dan CS230 bentrok 50 mnt.', moved='Jadwal diperbarui. Ketuk untuk membatalkan.',
@@ -193,8 +219,8 @@ C = {
   widK='Widget Hari ini di tiga kertas',
   h5='Jadual Papers.',
   p5lead='Aplikasi lain menyebutnya tema. Kami menyebutnya kertas, karena memang itu gunanya: tempat menulis minggumu.',
-  p5='Tiap kertas punya garis, margin, tinta, huruf judul dan stabilonya sendiri. Graph dan Graph dark gratis. Delapan lainnya termasuk dalam Pro, di antaranya Ulangkaji untuk musim ujian dan set Kopitiam.',
-  paperGrp='Kertas', paperNote='6 kertas · 2 gratis', kopiSet='Set Kopitiam', kopiNote='4 kertas · Pro',
+  p5='Tiap kertas punya garis, margin, tinta, huruf judul dan stabilonya sendiri. Graph dan Graph dark gratis. Sembilan lainnya termasuk dalam Pro, di antaranya Ulangkaji untuk musim ujian, Arang untuk halaman gelap yang polos, dan set Kopitiam.',
+  paperGrp='Kertas', paperNote='7 kertas · 2 gratis', kopiSet='Set Kopitiam', kopiNote='4 kertas · Pro',
   kopiKick='Satu set empat kertas · Pro',
   kopiLine='Kopitiam, Marmar, Jubin dan Papan menu. Meja marmer, ubin lantai, cangkir enamel dan papan menu kapur, dengan pita songket di margin. Stabilo dinamai dari minuman dan makanan: kaya, pandan, teh tarik, bandung, bunga telang, es campur, cabai.',
   free='Gratis', examSeason='Pro · musim ujian',
@@ -204,9 +230,9 @@ C = {
   nK=['Pengingat kuliah · gratis', 'Malam sebelum ujian · Pro'], fig3='Strip ujian di Hari ini',
   pk='Gratis, dan Pro.', ph='Jadwalnya gratis selamanya.', proCol='Pro menambahkan',
   freeRows=['Hari ini dan Minggu, dengan minggu A/B', 'Kampus atau rutinitas mingguan', 'Pengingat kuliah dan kegiatan', 'Tugas, dengan jam tenggat dan pengingat', 'Wallpaper: Hari ini atau Besok',
-            'Graph dan Graph dark', 'Widget Hari ini, 4×2', 'Ekspor dan impor file .jadual'],
-  proRows=['Wallpaper: Seminggu penuh dan Kuliah berikutnya', 'Delapan kertas lagi, atau fotomu sendiri', 'Preset, dan layar utama yang berbeda',
-           'Baris hitung mundur ujian dan pengingat malam sebelumnya', 'Digambar ulang pukul 06.00 dan setelah setiap perubahan', 'Sebelas widget lagi', 'Catatan, dengan Inbox, dan catatan di bawah setiap ujian', 'Arsip semester'],
+            'Graph dan Graph dark', 'Widget Hari ini, 4×2', 'Ekspor dan impor file .jadual', 'Cadangan otomatis ke folder'],
+  proRows=['Wallpaper: Seminggu penuh dan Kuliah berikutnya', 'Sembilan kertas lagi, atau fotomu sendiri', 'Preset, dan desain terpisah untuk layar utama',
+           'Baris hitung mundur ujian dan pengingat malam sebelumnya', 'Wallpaper digambar ulang pukul 06.00 dan setelah setiap perubahan', 'Sebelas widget lagi', 'Catatan dengan Gambar, stabilo, dan templat', 'Delapan warna stabilo lagi, dan warnamu sendiri', 'Arsip semester'],
   priceLine='Jadual Pro berupa Pass Semester untuk 6 bulan, dengan uji coba gratis 7 hari bagi pengguna baru, atau Seumur hidup. Google Play menampilkan harga dalam mata uangmu.',
   galH='Satu semester penuh, di satu lembar.', turn='balik halaman →', crossed='Dicoret, dengan sengaja.',
   freeOn='Gratis di Google Play', fw0='Ketik', fw1='sekali', fw2='saja.',
@@ -216,10 +242,11 @@ C = {
   now='Sekarang · sisa 32 mnt', next='Berikutnya · 3 j 42 mnt lagi',
   facts=[('Gratis, tanpa batas waktu', 'Gratis terus'), ('Data tetap di HP', 'Di HP-mu saja'), ('Di lock screen-mu', 'Sudah menunggu'), ('Terpasang dari Google Play', '200+')],
   gallery=[('Mulai', 'Beri nama semester sekali, atau impor file.'), ('Hari ini', 'Sekarang, berikutnya, dan jam kosong.'),
-           ('Minggu', 'Tujuh hari penuh. Minggu A dan B, tahan untuk pindah.'), ('Ubah slot', 'Cip untuk jam umum. Tahan untuk hapus.'),
-           ('Mata kuliah', 'Kode, stabilo, dosen, jam. Tahan Hapus untuk membuang.'), ('Rutinitas mingguan', 'Kegiatan, tanpa kode, tanpa semester.'),
-           ('Wallpaper', 'Dibuat di sekitar jam dan ikonmu.'), ('Jadual Papers', 'Sepuluh kertas. Dua gratis.'),
-           ('Pengingat', 'Sebelum tiap kuliah, dan malam sebelum ujian.'), ('Arsip', 'Semester lalu, hanya baca, bisa diekspor. Pro.')],
+           ('Minggu', 'Tujuh hari penuh. Minggu A dan B, tekan lama untuk memindahkan.'), ('Ubah slot', 'Pilih jam umum dengan sekali ketuk. Tahan untuk hapus.'),
+           ('Mata kuliah', 'Kode, stabilo, dosen, jam. Tahan Hapus untuk menghapus.'), ('Rutinitas mingguan', 'Kegiatan, tanpa kode, tanpa semester.'),
+           ('Wallpaper', 'Dibuat di sekitar jam dan ikonmu.'), ('Jadual Papers', 'Sebelas kertas. Dua gratis.'),
+           ('Catatan', 'Teks, gambar, dan to-do untuk tiap kelas. Pro.'), ('Pengingat', 'Sebelum tiap kuliah, dan malam sebelum ujian.'),
+           ('Cadangan otomatis', 'Salinan di folder pilihanmu. Gratis.'), ('Arsip', 'Semester lalu, hanya bisa dibaca, bisa diekspor. Pro.')],
   nos=[('Akun', 'Buka dan langsung ketik'), ('Cloud', 'Tersimpan di ponsel ini'), ('Iklan', ''),
        ('Feed sosial', 'Jadwalmu tetap milikmu'), ('Pelacak', 'Tanpa analitik, tanpa ID iklan')],
   widTitle=('Graph · widget', 'Graph dark · widget'), widNext='Kuliah berikutnya', widToday='Hari ini', widWeek='Minggu',
@@ -227,7 +254,7 @@ C = {
   shot='Tangkapan layar dari aplikasi'),
 }
 
-GALLERY_SHOTS = ['first', 'today', 'week', 'sheet', 'subjects', 'routine', 'wall', 'papers', 'reminders', 'archive']
+GALLERY_SHOTS = ['first', 'today', 'week', 'sheet', 'subjects', 'routine', 'wall', 'papers', 'notes_list', 'reminders', 'backup', 'archive']
 WALLS = [('a.', 'wall_a'), ('b.', 'wall_b'), ('c.', 'wall_c')]
 
 e = html.escape
@@ -442,10 +469,15 @@ def page(lang):
         f'text-decoration:none;font-size:13px;font-weight:600;'
         + ('background:rgb(var(--k));color:rgb(var(--g))' if k == lang else 'color:rgb(var(--k))') + f'">{t}</a>'
         for k, t in (('en', 'EN'), ('ms', 'BM'), ('id', 'ID')))
-    play = (f'<a href="{STORE_SITE}" style="display:inline-flex;align-items:center;gap:14px;height:58px;padding:0 22px;background:rgb(var(--k));'
-            'color:rgb(var(--g));border-radius:2px;text-decoration:none"><span style="display:flex;flex-direction:column;line-height:1.15">'
-            f'<span style="font-size:10px;font-weight:600;letter-spacing:.14em">{e(c["getOn"])}</span>'
-            '<span style="font-size:18px;font-weight:600">Google Play</span></span></a>')
+    play = (f'<a class="play-btn" href="{STORE_SITE}">'
+            '<svg class="play-btn__logo" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" focusable="false">'
+            '<path fill="#FFD500" d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594z"/>'
+            '<path fill="#00A0FF" d="M1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924z"/>'
+            '<path fill="#00D95F" d="M13.544 10.989l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973z"/>'
+            '<path fill="#FF3A44" d="M13.544 13.056l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/></svg>'
+            '<span class="play-btn__text">'
+            f'<span class="play-btn__eyebrow">{e(c["getOn"])}</span>'
+            '<span class="play-btn__name">Google Play</span></span></a>')
     tiktok = (f'<a href="{TIKTOK}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:14px;height:58px;padding:0 22px;background:#FFE45C;'
               'color:#1b2233;border:1.5px solid #1b2233;border-radius:2px;text-decoration:none">'
               '<svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" style="flex:none"><path fill="currentColor" d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg><span style="display:flex;flex-direction:column;line-height:1.15">'
@@ -469,7 +501,7 @@ def page(lang):
                     f'{e(c["wallT"][i][1])}</span></span></div>'
                     for i, (n, _) in enumerate(WALLS))
     wphones = ''.join(f'<div data-wph="" style="position:absolute;inset:0;overflow:hidden;border-radius:26px;outline:1.5px solid rgb(var(--k));'
-                      f'outline-offset:6px;opacity:{1 if i == 0 else 0}"><img src="{shots}{f}.jpg" alt="{e(c["wallT"][i][0])}" width="290" height="644" '
+                      f'outline-offset:0;opacity:{1 if i == 0 else 0}"><img src="{shots}{f}.jpg" alt="{e(c["wallT"][i][0])}" width="290" height="644" '
                       'loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover"></div>'
                       for i, (_, f) in enumerate(WALLS))
     routine = ''.join(f'<div style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:baseline;padding:7px 0;'
@@ -513,7 +545,7 @@ def page(lang):
                    for h, k, m, rows in ((c['free'], '', '·', c['freeRows']), ('Pro', c['proCol'], '+', c['proRows'])))
     gallery = ''.join(
         '<div style="flex:none;width:252px;display:flex;flex-direction:column;gap:14px">'
-        + phone(f'{up}assets/screens/first.jpg' if s == 'first' else f'{shots}{s}.jpg', t, 252, 560, 22, offset=4)
+        + phone(f'{shots}{s}.jpg', t, 252, 560, 22, offset=0)
         + f'<div style="display:grid;grid-template-columns:30px minmax(0,1fr);gap:8px;margin-top:6px"><span style="font-family:\'Instrument Serif\',serif;'
           f'font-style:italic;font-size:20px;color:var(--rule)">{i + 1}.</span><div><div style="font-family:\'Instrument Serif\',serif;font-size:22px;'
           f'line-height:1">{e(t)}</div><div style="font-size:13px;line-height:1.5;color:rgba(var(--k),.75);margin-top:5px">{e(d)}</div></div></div></div>'
@@ -539,6 +571,23 @@ def page(lang):
     pad = 'padding-left:clamp(48px,7vw,104px);padding-right:clamp(20px,4vw,56px)'
     proof = proof_html(lang, serif, pad)
     strip_w, strip_h = jpeg_size(ROOT / f'assets/screens/{lang}/exam_strip.jpg')
+    nframe = lambda i: ''
+    def nframe(i):
+        alt = c['noteAlts'][i]
+        if i in (0, 2):
+            inner = phone(f"{shots}{'notes_editor' if i == 0 else 'notes_canvas'}.jpg", alt, 290, 644, 26, offset=0)
+        elif i == 1:
+            inner = (f'<img src="{shots}note_today.jpg" alt="{e(alt)}" width="700" height="392" loading="lazy" decoding="async" '
+                     'style="display:block;width:340px;max-width:100%;height:auto;border-radius:6px;outline:1.5px solid rgb(var(--k));outline-offset:0">')
+        else:
+            inner = (f'<img src="{shots}wid_light_revise.jpg" alt="{e(alt)}" width="934" height="580" loading="lazy" decoding="async" '
+                     'style="display:block;width:340px;max-width:100%;height:auto;border-radius:20px;outline:1.5px solid rgb(var(--k));outline-offset:0">')
+        cap = (f'<figcaption style="margin-top:18px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;'
+               f'color:rgba(var(--k),.7);text-align:center">{e(c["fig"])} 4 · {e(c["stepW"])} {i + 1}/4</figcaption>')
+        return f'<figure data-nframe="" class="n-frame"><div>{inner}{cap}</div></figure>'
+    nsteps = ''.join(f'<li data-nstep="" class="n-step"><span class="n-dot">{i + 1}</span><div><div class="n-t">{e(t)}</div>'
+                     f'<div class="n-d">{e(d)}</div></div></li>' for i, (t, d) in enumerate(c['noteSteps']))
+    nframes = ''.join(nframe(i) for i in range(4))
     hreflang = ''.join(f'<link rel="alternate" hreflang="{k}" href="{BASE}{"" if k == "en" else k + "/"}">' for k in ('en', 'ms', 'id'))
 
     return f'''<!doctype html>
@@ -575,8 +624,10 @@ def page(lang):
 <div style="display:flex;align-items:center;gap:clamp(12px,2.4vw,32px);font-size:14px;font-weight:500">
 <a data-navlink="" href="#week" style="text-decoration:none">{e(c['navWeek'])}</a>
 <a data-navlink="" href="#wallpaper" style="text-decoration:none">{e(c['navWall'])}</a>
+<a data-navlink="" href="#notes" style="text-decoration:none">{e(c['navNotes'])}</a>
 <a data-navlink="" href="#widgets" style="text-decoration:none">{e(c['navWid'])}</a>
 <a data-navlink="" href="#themes" style="text-decoration:none">{e(c['navThemes'])}</a>
+<a data-navlink="" href="{up}playbook/" style="text-decoration:none">{e(c['navPlay'])}</a>
 <div role="group" aria-label="Language" style="display:flex;gap:2px;padding:2px;border:1.5px solid rgb(var(--k));border-radius:2px">{lang_links}</div><a data-navget="" href="#get" style="height:40px;padding:0 16px;display:flex;align-items:center;border:1.5px solid rgb(var(--k));border-radius:2px;text-decoration:none;font-weight:600;white-space:nowrap">{e(c['getApp'])}</a>
 </div>
 </div>
@@ -588,18 +639,19 @@ def page(lang):
 <h1 aria-label="Jadual" style="margin:20px 0 0;{serif};font-weight:400;font-size:clamp(110px,18vw,280px);line-height:.84;letter-spacing:-.025em;display:flex">{letters}</h1>
 <p style="margin:14px 0 0;max-width:560px"><span data-mark="" style="{serif};font-style:italic;font-size:clamp(28px,3.2vw,44px);line-height:1.2;background-image:linear-gradient(100deg,transparent 1%,#FFE45C 2%,#FFE45C 97%,transparent 99%);background-repeat:no-repeat;background-position:0 88%;background-size:100% 55%;box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:0 4px;margin:0 -4px;color:#1b2233">{e(c['tagline'])}</span></p>
 <p data-hf="" style="margin:22px 0 0;font-size:16px;line-height:1.7;color:rgba(var(--k),.8);max-width:480px;text-wrap:pretty">{e(c['heroP'])}</p>
-<div data-hf="" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:32px;align-items:center">
+<div data-hf="" style="display:flex;flex-wrap:wrap;gap:14px 26px;margin-top:32px;align-items:center">
 {play}
-<a href="#week" style="height:58px;padding:0 20px;display:inline-flex;align-items:center;gap:10px;border:1.5px solid rgb(var(--k));border-radius:2px;text-decoration:none;font-size:15px;font-weight:600">{e(c['watch'])}</a>
+<a href="#week" style="font-size:15px;font-weight:600;text-decoration:none;border-bottom:1.5px solid rgb(var(--k));padding-bottom:3px">{e(c['watch'])}</a>
 </div>
-<div data-hf="" style="display:flex;flex-wrap:wrap;gap:14px;margin-top:14px;align-items:center">
-{tiktok}
-{youtube}
-<span style="font-size:14px;font-weight:500;color:rgba(var(--k),.8);max-width:260px;line-height:1.4">{e(c['followCap'])}</span>
+<a data-hf="" href="{up}playbook/" style="margin-top:22px;display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:500;text-decoration:none">
+<span style="font-size:10px;font-weight:700;letter-spacing:.12em;color:var(--rule);border:1.5px solid var(--rule);padding:2px 6px 1px">{e(c['newTag'])}</span>
+<span style="border-bottom:1.5px solid rgb(var(--k));padding-bottom:2px">{e(c['playLine'])} →</span></a>
+<div data-hf="" style="display:flex;flex-wrap:wrap;gap:6px 10px;margin-top:14px;align-items:center;font-size:13.5px;font-weight:500;color:rgba(var(--k),.78)">
+{e(c['followLbl'])} <a href="{TIKTOK}" target="_blank" rel="noopener" style="text-decoration:underline">TikTok</a><span aria-hidden="true">·</span><a href="{YOUTUBE}" target="_blank" rel="noopener" style="text-decoration:underline">YouTube</a>
 </div>
 </div>
 <div data-hpar="" style="position:relative;z-index:1;justify-self:center"><div data-hphone="" style="display:flex;flex-direction:column;gap:12px">
-{phone(shots + 'today.jpg', c['gallery'][1][0], 290, 644, 26, '1.5deg')}
+{phone(shots + 'today.jpg', c['gallery'][1][0], 290, 644, 26, '1.5deg', offset=0)}
 <div style="display:flex;justify-content:space-between;{serif};font-style:italic;font-size:17px;color:rgba(var(--k),.75);margin-top:10px"><span>{e(c['fig'])} 1</span><span>{e(c['fig1'])}</span></div>
 </div></div>
 <span data-stamp="" style="position:absolute;right:clamp(20px,6vw,90px);top:110px;width:120px;height:120px;border:2px solid var(--rule);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--rule);transform:rotate(-12deg);{serif};z-index:3"><span style="font-style:italic;font-size:56px;line-height:.9">A+</span><span style="font-size:11px;font-family:'IBM Plex Sans',sans-serif;font-weight:600;letter-spacing:.1em">{e(c['week7'])}</span></span>
@@ -641,7 +693,7 @@ def page(lang):
 </div>
 </div>
 <div data-cphone="" style="justify-self:center;display:flex;flex-direction:column;gap:12px">
-{phone(shots + 'week.jpg', c['gallery'][2][0], 290, 644, 26, '-1.5deg')}
+{phone(shots + 'week.jpg', c['gallery'][2][0], 290, 644, 26, '-1.5deg', offset=0)}
 <div style="display:flex;justify-content:space-between;{serif};font-style:italic;font-size:17px;color:rgba(var(--k),.75);margin-top:10px"><span>{e(c['fig'])} 2</span><span>{e(c['fig2'])}</span></div>
 </div>
 </section>
@@ -660,8 +712,18 @@ def page(lang):
 </div>
 </section>
 
+<section id="notes" data-notes="" style="position:relative;padding:130px clamp(20px,4vw,56px) 130px clamp(48px,7vw,104px);box-sizing:border-box;border-top:1.5px solid rgb(var(--k));display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:48px;align-items:center;overflow:hidden">
+<div>
+<div style="display:flex;align-items:center;gap:14px">{q('q4', False)}<span style="font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:3px 7px;border-radius:2px;border:1.5px solid currentColor">Pro</span></div>
+{h2('noteH', 640, False)}
+{para('noteP', 480, False)}
+<ol class="n-steps">{nsteps}</ol>
+</div>
+<div class="n-stage">{nframes}</div>
+</section>
+
 <section id="widgets" style="position:relative;padding:130px clamp(20px,4vw,56px) 130px clamp(48px,7vw,104px);border-top:1.5px solid rgb(var(--k))">
-{q('q4')}
+{q('q5')}
 {h2('h4', 860)}
 {para('p4', 560)}
 <div style="display:flex;flex-wrap:wrap;gap:24px;margin-top:48px">
@@ -679,7 +741,7 @@ def page(lang):
 </section>
 
 <section id="themes" style="position:relative;padding:130px clamp(20px,4vw,56px) 130px clamp(48px,7vw,104px);border-top:1.5px solid rgb(var(--k))">
-{q('q5')}
+{q('q6')}
 {h2('h5', 860)}
 <p data-r="" style="margin:18px 0 0;max-width:680px;{serif};font-style:italic;font-size:clamp(24px,2.6vw,34px);line-height:1.25;text-wrap:pretty">{e(c['p5lead'])}</p>
 {para('p5', 620)}
@@ -706,7 +768,7 @@ def page(lang):
 
 <section id="reminders" style="position:relative;padding:130px clamp(20px,4vw,56px) 130px clamp(48px,7vw,104px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:56px;align-items:center;border-top:1.5px solid rgb(var(--k))">
 <div>
-{q('q6')}
+{q('q7')}
 {h2('h6', 900)}
 {para('p6', 460)}
 <div data-r="" style="margin-top:26px;max-width:460px">
