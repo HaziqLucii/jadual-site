@@ -1,3 +1,14 @@
+// ?s=<source> (for example ?s=pinterest) retags the Play buttons so Play
+// attributes installs to that source instead of the generic "site".
+(function () {
+  var s = (new URLSearchParams(location.search).get('s') || '').toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 20);
+  if (!s) return;
+  var links = document.querySelectorAll('a.play-btn');
+  for (var i = 0; i < links.length; i++) {
+    links[i].href = links[i].href.replace('utm_source%3Dsite', 'utm_source%3D' + s);
+  }
+})();
+
 // Scroll scenes ported from the design file's setup(). Without GSAP, with
 // reduced motion, or on narrow screens the page stays fully static and
 // readable: every element's resting state is its final state.
