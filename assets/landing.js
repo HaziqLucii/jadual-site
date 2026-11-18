@@ -1,7 +1,9 @@
-// ?s=<source> (for example ?s=pinterest) retags the Play buttons so Play
-// attributes installs to that source instead of the generic "site".
+// ?s=<source> or ?utm_source=<source> (Pinterest adds utm_source=Pinterest to
+// its outbound links itself) retags the Play buttons so Play attributes
+// installs to that source instead of the generic "site".
 (function () {
-  var s = (new URLSearchParams(location.search).get('s') || '').toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 20);
+  var q = new URLSearchParams(location.search);
+  var s = (q.get('s') || q.get('utm_source') || '').toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 20);
   if (!s) return;
   var links = document.querySelectorAll('a.play-btn');
   for (var i = 0; i < links.length; i++) {
